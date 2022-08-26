@@ -1,0 +1,7 @@
+{
+  "name": "Portal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
