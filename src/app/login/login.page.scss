@@ -18,7 +18,7 @@ ion-content{
   font-size: 35px;
   text-align: center;
   color: #454548;
-  margin-top: 10%;
+  margin-top: 7%;
 }
 
 .line{
@@ -39,3 +39,45 @@ ion-content{
     height:100%;
     width: 100%;
   }
+
+  form{
+    position: absolute;
+    width: 90%;
+    padding-left: 5%;
+    margin-top: 40%;
+
+    .forgot-password-link{
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+        text-align: right;
+        font-weight: 600;
+        font-size: 14px;
+        color: #4a4a4a;
+        padding-top: 5%;
+    }
+    ion-button{
+        display: block;
+        margin-top: 10%;
+        font-family: 'Aileron-Heavy';
+        border-radius: 50%;
+    }
+    .contact-us{
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+      width: 100%;
+      font-weight: 600;
+      font-size: 14px;
+      color: #4a4a4a;
+      padding-top: 10%;
+  }
+}
+
+.textform{
+  font-family: 'Glacial-Indifference', sans-serif;
+  font-size: 18px;
+  padding-left: 5%;
+  color: #454548;
+  margin-top: 3%;
+}
