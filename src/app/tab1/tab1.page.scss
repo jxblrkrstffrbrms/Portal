@@ -1,29 +1,62 @@
-.bg{
-    position: absolute;
-    max-height: max-content;
-  }
-  
 .logo{
-    position: relative;
-    margin-top: 20%;
-    height:225px;
-  }
+  position: fixed;
+  margin-top: 15%;
+  margin-left: 25%;
+  height: 175px;
+}
 
 .line{
-    position: absolute;
-    margin-top: 2%;
-    margin-left: 30%;
-    width: 40%;
-  }
+  position: absolute;
+  margin-top: 2%;
+  margin-left: 30%;
+  width: 40%;
+}
 
 
-  @-webkit-keyframes scale-up-ver-bottom{0%{-webkit-transform:scaleY(.4);transform:scaleY(.4);-webkit-transform-origin:0 100%;transform-origin:0 100%}100%{-webkit-transform:scaleY(1);transform:scaleY(1);-webkit-transform-origin:0 100%;transform-origin:0 100%}}@keyframes scale-up-ver-bottom{0%{-webkit-transform:scaleY(.4);transform:scaleY(.4);-webkit-transform-origin:0 100%;transform-origin:0 100%}100%{-webkit-transform:scaleY(1);transform:scaleY(1);-webkit-transform-origin:0 100%;transform-origin:0 100%}}  
-  .content {
-    -webkit-animation:scale-up-ver-bottom .7s cubic-bezier(.39,.575,.565,1.000) both;animation:scale-up-ver-bottom .7s cubic-bezier(.39,.575,.565,1.000) both;
-    margin-top: 65%;
-    background-color: white;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    height:100%;
-    width: 100%;
-  }
+@-webkit-keyframes scale-up-ver-bottom{0%{-webkit-transform:scaleY(.4);transform:scaleY(.4);-webkit-transform-origin:0 100%;transform-origin:0 100%}100%{-webkit-transform:scaleY(1);transform:scaleY(1);-webkit-transform-origin:0 100%;transform-origin:0 100%}}@keyframes scale-up-ver-bottom{0%{-webkit-transform:scaleY(.4);transform:scaleY(.4);-webkit-transform-origin:0 100%;transform-origin:0 100%}100%{-webkit-transform:scaleY(1);transform:scaleY(1);-webkit-transform-origin:0 100%;transform-origin:0 100%}}  
+.content {
+  -webkit-animation:scale-up-ver-bottom .7s cubic-bezier(.39,.575,.565,1.000) both;animation:scale-up-ver-bottom .7s cubic-bezier(.39,.575,.565,1.000) both;
+  margin-top: 170%;
+  background-color: white;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  height:100%;
+  width: 100%;
+}
+
+#videoBG{
+position: fixed;
+z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+#videoBG{
+  width: 100%;
+  height: auto;
+}
+}
+
+@media (max-aspect-ratio: 16/9) {
+#videoBG{
+  width: auto;
+  height: 100%;
+}
+}
+
+.text {
+position: absolute;
+font-family: 'Aileron-Heavy', sans-serif;
+font-size: 40px;
+font-weight:900;
+margin-top: 5%;
+margin-left: 5%;
+line-height: 1px;
+
+.text1 {
+  font-family: Aileron-Heavy;
+}
+.text2{
+  font-family: Aileron-Heavy;
+  color: darkred;
+}
+}
