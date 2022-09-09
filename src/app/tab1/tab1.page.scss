@@ -21,7 +21,7 @@
   background-color: white;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
-  height: 100%;
+  height: auto;
   width: 100%;
 }
 
@@ -65,7 +65,6 @@ line-height: 1px;
 .news{
   position: relative;
   width:95%;
-  padding-top: 0%;
 }
 
 .newscard{
@@ -88,3 +87,38 @@ line-height: 1px;
     color: darkred;
   }
   }
+
+  .reminders {
+    position: relative;
+    font-family: 'Aileron-Heavy', sans-serif;
+    font-size: 40px;
+    font-weight:900;
+    left: 5%;
+    line-height: 1px;
+    
+    .text1 {
+      font-family: Aileron-Heavy;
+    }
+    .text2{
+      font-family: Aileron-Heavy;
+      color: darkred;
+    }
+  }
+
+ion-slides{
+    margin-left: 5%;
+}
+
+.swiper-slide-active{
+  transform: scale(1.05, 1.05);
+  
+  ion-card{
+      img{
+          transform: scale(1, 1);
+      }
+  }
+}
+
+.swiper-slide{
+  transition: 700ms all ease-in-out;
+}
