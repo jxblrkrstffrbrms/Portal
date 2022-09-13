@@ -1,7 +1,7 @@
 .logo{
   position: fixed;
   margin-top: 15%;
-  margin-left: 17%;
+  margin-left: 20%;
   height: 225px;
 }
 
@@ -169,8 +169,7 @@ ion-slides{
   }
 
 .mission{
-  border-top-left-radius: 20%;
-  border-bottom-right-radius: 20%;
+  border-radius: 10%;
 
   .abouttext{
     font-family: Aileron-Heavy;
@@ -180,8 +179,7 @@ ion-slides{
 }
 
 .vision{
-  border-top-left-radius: 20%;
-  border-bottom-right-radius: 20%;
+  border-radius: 10%;
 
   .abouttext{
     font-family: Aileron-Heavy;
@@ -191,8 +189,7 @@ ion-slides{
 }
 
 .values{
-  border-top-left-radius: 20%;
-  border-bottom-right-radius: 20%;
+  border-radius: 10%;
 
   .abouttext{
     font-family: Aileron-Heavy;
