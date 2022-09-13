@@ -69,7 +69,7 @@
     <p class="text2">Reminders</p>
   </div>
   <div>
-    <ion-list>
+    <ion-list class="remind">
       <ion-item-sliding>
         <ion-item>
           <ion-label>Activity 1</ion-label>
@@ -89,7 +89,58 @@
       </ion-item-sliding>
     </ion-list>
   </div>
+
+  <div class="abt">
+    <p class="text1">About</p>
+    <p class="text2">BatStateU</p>
   </div>
 
-  
+  <div class="abtbsu">
+    <ion-card class="mission">
+      <ion-card-header>
+        <ion-card-title class="abouttext">University Mission</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        A university committed to producing leaders by providing a 21st century learning environment through innovations in education, multidisciplinary research, and community and industry partnerships in order to nurture the spirit of nationhood, propel the national economy, and engage the world for sustainable development.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="vision">
+      <ion-card-header>
+        <ion-card-title class="abouttext">University Vision</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        A premier national university that develops leaders in the global knowledge economy.      
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="values">
+      <ion-card-header>
+        <ion-card-title class="abouttext">Core Values</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <li>Patriotism</li> 
+        <li>Service</li>  
+        <li>Integrity</li>  
+        <li>Resilience</li>       
+        <li>Excellence</li>  
+        <li>Faith</li>  
+      </ion-card-content>
+    </ion-card> 
+  </div>
+  </div>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="globe-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="bottom">
+        <ion-fab-button><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+        <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+        <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
 </ion-content>

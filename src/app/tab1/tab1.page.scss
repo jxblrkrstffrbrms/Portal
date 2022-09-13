@@ -105,6 +105,11 @@ line-height: 1px;
     }
   }
 
+  .remind{
+    left:5%;
+    width:95%;
+  }
+
 ion-slides{
     margin-left: 5%;
 }
@@ -144,4 +149,58 @@ ion-slides{
   .tneu1 {
     font-family: Aileron-Heavy;
   }
+}
+
+.abt {
+  position: relative;
+  font-family: 'Aileron-Heavy', sans-serif;
+  font-size: 40px;
+  font-weight:900;
+  left: 5%;
+  line-height: 1px;
+  
+  .text1 {
+    font-family: Aileron-Heavy;
+  }
+  .text2{
+    font-family: Aileron-Heavy;
+    color: darkred;
+  }
+  }
+
+.mission{
+  border-top-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+
+  .abouttext{
+    font-family: Aileron-Heavy;
+    color: darkred;
+    font-size: 20px;
+  }
+}
+
+.vision{
+  border-top-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+
+  .abouttext{
+    font-family: Aileron-Heavy;
+    color: darkred;
+    font-size: 20px;
+  }
+}
+
+.values{
+  border-top-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+
+  .abouttext{
+    font-family: Aileron-Heavy;
+    color: darkred;
+    font-size: 20px;
+  }
+}
+
+.abtbsu{
+  padding-bottom: 20px;
 }
