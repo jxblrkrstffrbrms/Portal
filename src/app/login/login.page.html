@@ -23,8 +23,18 @@
       <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
         Password is required.
       </span>
+      
 
       <a routerLink="#" class="forgot-password-link">Forgot  Password?</a>
+
+      <div class="captcha">
+        <form [formGroup]="aFormGroup">
+          <ngx-recaptcha2 #captchaElem
+            [siteKey]="siteKey"
+            formControlName="recaptcha">
+          </ngx-recaptcha2>
+        </form>
+      </div>
 
     <ion-button type="submit" color="danger" expand="block" (click)="home()">Submit</ion-button>
 

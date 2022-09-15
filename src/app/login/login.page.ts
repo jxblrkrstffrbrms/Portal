@@ -10,6 +10,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 export class LoginPage implements OnInit {
   ionicForm: FormGroup;
   isSubmitted = false;
+  protected aFormGroup: FormGroup;
 
   constructor(private router:Router, public formBuilder: FormBuilder) { }
 
@@ -17,7 +18,11 @@ export class LoginPage implements OnInit {
     this.ionicForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(5)]],
       email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]]
-    })
+    });
+
+    this.aFormGroup = this.formBuilder.group({
+      recaptcha: ['', Validators.required]
+    });
   }
 
   get errorControl() {
@@ -37,5 +42,7 @@ export class LoginPage implements OnInit {
   home(){
     this.router.navigate(['/tabs'])
   }
+
+  siteKey: string ="6LcYev0hAAAAAJ9UIw1V2DTNTs0reCFD_sDAfS0T";
 
 }

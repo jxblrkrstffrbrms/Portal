@@ -58,21 +58,20 @@ ion-content{
         padding-top: 5%;
     }
     ion-button{
-        display: block;
-        margin-top: 10%;
+        margin-top: 35%;
         font-family: 'Aileron-Heavy';
         font-size: 15px;
         border-radius: 50%;
     }
     .contact-us{
       text-decoration: none;
+      display: block;
       text-align: center;
-      display: inline-block;
       width: 100%;
       font-weight: 600;
       font-size: 14px;
       color: #4a4a4a;
-      padding-top: 10%;
+      padding-top: 5%;
   }
 }
 
@@ -82,4 +81,9 @@ ion-content{
   padding-left: 5%;
   color: #454548;
   margin-top: 3%;
+}
+
+.captcha{
+  position: absolute;
+  margin-top: 5%;
 }
