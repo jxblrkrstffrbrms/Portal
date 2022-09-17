@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -10,14 +11,18 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 export class LoginPage implements OnInit {
   ionicForm: FormGroup;
   isSubmitted = false;
+  sr_code = "";
+  password = "";
   protected aFormGroup: FormGroup;
 
-  constructor(private router:Router, public formBuilder: FormBuilder) { }
+  constructor(private router:Router, public formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit() {
     this.ionicForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(5)]],
-      email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]]
+      sr_code: ['', [Validators.required, Validators.minLength(5)]],
+      password: ['', [Validators.required, Validators.minLength(5)]],
+      //name: ['', [Validators.required, Validators.minLength(5)]],
+      //email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]]
     });
 
     this.aFormGroup = this.formBuilder.group({
@@ -29,13 +34,18 @@ export class LoginPage implements OnInit {
     return this.ionicForm.controls;
   }
 
-  submitForm() {
+  async submitForm() {
     this.isSubmitted = true;
     if (!this.ionicForm.valid) {
       console.log('Please provide all the required values!')
       return false;
     } else {
-      console.log(this.ionicForm.value)
+      const res = await this.http.post<any>('https://bsu-api.herokuapp.com/bsu-api/students/login', this.ionicForm.value).toPromise();
+      if (res){
+        this.home();
+      } else {
+        console.log("Invalid sr-code or password!")
+      }
     }
   }
 

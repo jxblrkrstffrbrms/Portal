@@ -11,14 +11,14 @@
     <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
       <ion-item lines="full">
         <ion-label position="floating" class="textform">SR-Code</ion-label>
-        <ion-input label="Username" formControlName="name"></ion-input>
+        <ion-input label="SR-Code" formControlName="sr_code" [(ngModel)]="sr_code"></ion-input>
       </ion-item>
       <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
         SR-Code is required.
       </span>
       <ion-item lines="full">
         <ion-label position="floating" class="textform">Password</ion-label>
-        <ion-input label="Password" type="password" formControlName="name"></ion-input>
+        <ion-input label="Password" type="password" formControlName="password" [(ngModel)]="password"></ion-input>
       </ion-item>
       <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
         Password is required.
@@ -36,7 +36,7 @@
         </form>
       </div>
 
-    <ion-button type="submit" color="danger" expand="block" (click)="home()">Submit</ion-button>
+    <ion-button type="submit" color="danger" expand="block" (click)="submitForm()">Submit</ion-button>
 
     <a routerLink="#" class="contact-us">Contact Us</a>
   </form>

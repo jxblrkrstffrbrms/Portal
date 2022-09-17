@@ -8,6 +8,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     IonicModule,
     LoginPageRoutingModule,
     ReactiveFormsModule,
-    NgxCaptchaModule
+    NgxCaptchaModule,
+    HttpClientModule
   ],
   declarations: [LoginPage]
 })
