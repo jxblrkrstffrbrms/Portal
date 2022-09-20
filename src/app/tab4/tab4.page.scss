@@ -1,44 +1,68 @@
-ion-content{
-    overflow: hidden;
+.profile{
+    background-color: darkred;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    position: fixed;
 }
 
 .line{
-    position: fixed;
-    margin-top: 2%;
+    position: relative;
     margin-left: 30%;
     width: 40%;
-}
-  
-  
-@-webkit-keyframes scale-up-ver-bottom{0%{-webkit-transform:scaleY(.4);transform:scaleY(.4);-webkit-transform-origin:0 100%;transform-origin:0 100%}100%{-webkit-transform:scaleY(1);transform:scaleY(1);-webkit-transform-origin:0 100%;transform-origin:0 100%}}@keyframes scale-up-ver-bottom{0%{-webkit-transform:scaleY(.4);transform:scaleY(.4);-webkit-transform-origin:0 100%;transform-origin:0 100%}100%{-webkit-transform:scaleY(1);transform:scaleY(1);-webkit-transform-origin:0 100%;transform-origin:0 100%}}  
-.content {
-    -webkit-animation:scale-up-ver-bottom .7s cubic-bezier(.39,.575,.565,1.000) both;animation:scale-up-ver-bottom .7s cubic-bezier(.39,.575,.565,1.000) both;
+    padding-bottom: 2%;
+  }
+
+.idpic{
     position: relative;
-    margin-top: 58%;
-    background-color: white;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    height: auto;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35%;
+    height: 35%;
+    margin-top: 5%;
 }
 
-.text {
+.text{
     position: relative;
-    font-family: 'Aileron-Heavy', sans-serif;
-    font-size: 40px;
-    font-weight:900;
-    left: 5%;
     line-height: 1px;
-    
-.text1 {
-    font-family: Aileron-Heavy;
-}
-.text2{
-    font-family: Aileron-Heavy;
-    color: darkred;
-}
+
+    .name{
+        font-family: 'Aileron-Heavy', sans-serif;
+        font-size: 30px;
+        color: white;
+        text-align: center;
+    }
+
+    .course{
+        font-family: 'Aileron-Heavy', sans-serif;
+        font-size: 17px;
+        color: white;
+        text-align: center;
+    }
+
+    .srcode{
+        font-family: 'Aileron-Heavy', sans-serif;
+        font-size: 17px;
+        color: white;
+        text-align: center;
+    }
 }
 
+.buttons{
+    position: relative;
+    top: 36%;
+}
+
+.button{
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.20),
+    0px 1px 3px 0px rgba(0,0,0,0.02);
+    --border: none;
+    border-radius: 50px;
+
+    .label{
+        font-family: 'Glacial-Indifference', sans-serif;
+        font-size: 18px;
+    }
+}
 
 
   
