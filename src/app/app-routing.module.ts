@@ -22,7 +22,35 @@ const routes: Routes = [
   {
     path: 'tab4',
     loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
+  },  {
+    path: 'regcert',
+    loadChildren: () => import('./profile/regcert/regcert.module').then( m => m.RegcertPageModule)
+  },
+  {
+    path: 'studentid',
+    loadChildren: () => import('./profile/studentid/studentid.module').then( m => m.StudentidPageModule)
+  },
+  {
+    path: 'subjects',
+    loadChildren: () => import('./profile/subjects/subjects.module').then( m => m.SubjectsPageModule)
+  },
+  {
+    path: 'curriculum',
+    loadChildren: () => import('./profile/curriculum/curriculum.module').then( m => m.CurriculumPageModule)
+  },
+  {
+    path: 'scholarship',
+    loadChildren: () => import('./profile/scholarship/scholarship.module').then( m => m.ScholarshipPageModule)
+  },
+  {
+    path: 'liabilities',
+    loadChildren: () => import('./profile/liabilities/liabilities.module').then( m => m.LiabilitiesPageModule)
+  },
+  {
+    path: 'qrcode',
+    loadChildren: () => import('./profile/qrcode/qrcode.module').then( m => m.QrcodePageModule)
   }
+
 ];
 @NgModule({
   imports: [
