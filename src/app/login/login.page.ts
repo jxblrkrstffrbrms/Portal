@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginPage implements OnInit {
   password = "";
   protected aFormGroup: FormGroup;
 
-  constructor(private router:Router, public formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor(private router:Router, public formBuilder: FormBuilder, private http: HttpClient, private alertController: AlertController) { }
 
   ngOnInit() {
     this.ionicForm = this.formBuilder.group({
@@ -54,5 +55,19 @@ export class LoginPage implements OnInit {
   }
 
   siteKey: string ="6LcYev0hAAAAAJ9UIw1V2DTNTs0reCFD_sDAfS0T";
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Forgot Password',
+      message: 'Enter your registered email address below. An email will be sent to this address for password reset confirmation.',
+      buttons: ['OK'],
+      inputs: [
+        {
+          placeholder: 'Email Address',
+        }]
+    });
+
+    await alert.present();
+  }
 
 }

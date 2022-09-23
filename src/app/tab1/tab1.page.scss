@@ -169,7 +169,11 @@ ion-slides{
   }
 
 .mission{
-  border-radius: 10%;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.20),
+    0px 1px 3px 0px rgba(0,0,0,0.02);
+  --border: none;
 
   .abouttext{
     font-family: Aileron-Heavy;
@@ -179,7 +183,11 @@ ion-slides{
 }
 
 .vision{
-  border-radius: 10%;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.20),
+    0px 1px 3px 0px rgba(0,0,0,0.02);
+  --border: none;
 
   .abouttext{
     font-family: Aileron-Heavy;
@@ -189,7 +197,11 @@ ion-slides{
 }
 
 .values{
-  border-radius: 10%;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.20),
+    0px 1px 3px 0px rgba(0,0,0,0.02);
+  --border: none;
 
   .abouttext{
     font-family: Aileron-Heavy;
