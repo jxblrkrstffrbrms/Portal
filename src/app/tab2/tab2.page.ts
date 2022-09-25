@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +8,32 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(private alertController: AlertController) {}
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Add a reminder',
+      buttons: ['OK'],
+      inputs: [
+        {
+          placeholder: 'Name',
+        },
+        {
+          placeholder: 'Date',
+          attributes: {
+            maxlength: 8,
+          },
+        },
+        {
+          placeholder: 'Time',
+          attributes: {
+            maxlength: 8,
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+  }
 
 }

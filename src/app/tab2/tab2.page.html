@@ -1,17 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="text">
+    <p class="text1">My</p>
+    <p class="text2">Calendar</p>
+  </div>
+  <div class="cldr">
+    <ion-datetime presentation="date"></ion-datetime>
+  </div>
+  <div class="text">
+    <p class="text1">My</p>
+    <p class="text2">Activities</p>
+  </div>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="presentAlert()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
