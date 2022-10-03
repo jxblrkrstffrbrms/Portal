@@ -7,9 +7,32 @@
 </ion-header>
 
 <ion-content>
-  <div class="text">
-    <p class="text1">My</p>
-    <p class="text2">Liabilities</p>
-  </div>
+  
+  <ion-grid>
+    <ion-row>
+      <div class="text">
+        <p class="text1">My</p>
+        <p class="text2">Liabilities</p>
+      </div>
+    </ion-row>
+    <ion-row>
+
+      
+    <ion-card *ngFor="let liab of liabs">
+      <ion-card-header>
+        <ion-card-subtitle>{{ liab.sem }} </ion-card-subtitle>
+        <ion-card-title>{{ liab.name }} (PHP {{ liab.amount }}</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{ liab.note }}
+      </ion-card-content>
+    </ion-card>
+
+
+
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
 

@@ -7,13 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { SubjectsPageRoutingModule } from './subjects-routing.module';
 
 import { SubjectsPage } from './subjects.page';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SubjectsPageRoutingModule
+    SubjectsPageRoutingModule,
+    HttpClientModule,
   ],
   declarations: [SubjectsPage]
 })

@@ -7,10 +7,12 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
+  activeDays = []
+  activeDate = null;
   constructor(private alertController: AlertController) {}
 
   async presentAlert() {
+    console.log(this.activeDate);
     const alert = await this.alertController.create({
       header: 'Add a reminder',
       buttons: ['OK'],
@@ -35,5 +37,7 @@ export class Tab2Page {
 
     await alert.present();
   }
+
+  
 
 }
