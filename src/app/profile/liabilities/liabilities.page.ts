@@ -16,7 +16,7 @@ export class LiabilitiesPage implements OnInit {
 
 
   async getLiabilities() {
-    const res = await this.http.get<any>('http://127.0.0.1:5000/bsu-api/students/19-03746/liab').toPromise();
+    const res = await this.http.get<any>('https://bsu-api.herokuapp.com/bsu-api/students/19-03746/liab').toPromise();
     this.liabs = res.data
   }
 

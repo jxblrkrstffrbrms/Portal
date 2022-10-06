@@ -16,7 +16,7 @@ export class SubjectsPage implements OnInit {
   }
   
   async getSubjects() {
-    const res = await this.http.get<any>('http://127.0.0.1:5000/bsu-api/students/19-03746/subjects').toPromise();
+    const res = await this.http.get<any>('https://bsu-api.herokuapp.com/bsu-api/students/19-03746/subjects').toPromise();
     this.subjects = res.subjects
   }
 
