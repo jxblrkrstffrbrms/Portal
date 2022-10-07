@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { CurriculumPageRoutingModule } from './curriculum-routing.module';
 
 import { CurriculumPage } from './curriculum.page';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CurriculumPageRoutingModule
+    CurriculumPageRoutingModule,
+    HttpClientModule,
   ],
   declarations: [CurriculumPage]
 })

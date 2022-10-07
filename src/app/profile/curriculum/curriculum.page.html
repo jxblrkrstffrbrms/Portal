@@ -11,5 +11,11 @@
     <p class="text1">My</p>
     <p class="text2">Curriculum</p>
   </div>
+  <ion-card *ngFor="let subject of fourth">
+    <ion-card-header>
+      <ion-card-subtitle class="arimo">Fourth year </ion-card-subtitle>
+      <ion-card-title class="arimo">{{ subject.code }} - {{ subject.name}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
 </ion-content>
 
