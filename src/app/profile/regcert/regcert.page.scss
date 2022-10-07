@@ -14,3 +14,17 @@
       color: darkred;
     }
     }
+  
+.rotate90 {
+    padding-top: 200px;
+    padding-left: 200px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+img {
+  height: 200px;
+}

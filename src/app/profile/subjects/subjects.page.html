@@ -11,5 +11,16 @@
     <p class="text1">My</p>
     <p class="text2">Subjects</p>
   </div>
+
+  <ion-card *ngFor="let subject of subjects">
+    <ion-card-header>
+      <ion-card-subtitle>{{ subject.professor }} </ion-card-subtitle>
+      <ion-card-title>{{ subject.code }} - {{ subject.name}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      some more details
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 

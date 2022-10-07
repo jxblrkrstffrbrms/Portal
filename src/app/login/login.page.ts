@@ -41,7 +41,9 @@ export class LoginPage implements OnInit {
       console.log('Please provide all the required values!')
       return false;
     } else {
-      const res = await this.http.post<any>('https://bsu-api.herokuapp.com/bsu-api/students/login', this.ionicForm.value).toPromise();
+      console.log('testing')
+      const res = await this.http.post<any>('https://bsu-api.herokuapp.com//bsu-api/students/login', this.ionicForm.value).toPromise();
+      console.log(res)
       if (res){
         this.home();
       } else {

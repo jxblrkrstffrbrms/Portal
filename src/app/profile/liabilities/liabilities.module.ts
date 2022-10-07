@@ -8,12 +8,15 @@ import { LiabilitiesPageRoutingModule } from './liabilities-routing.module';
 
 import { LiabilitiesPage } from './liabilities.page';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LiabilitiesPageRoutingModule
+    LiabilitiesPageRoutingModule,
+    HttpClientModule,
   ],
   declarations: [LiabilitiesPage]
 })
