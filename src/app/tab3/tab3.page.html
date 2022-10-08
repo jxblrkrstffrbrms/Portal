@@ -1,17 +1,58 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="text">
+    <p class="text1">My</p>
+    <p class="text2">Grades</p>
+  </div>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-grid>
+    <div class="chart"></div>
+  </ion-grid>
+  
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <div class="gwatext">
+              <p class="text1">Past</p>
+              <p class="text2">GWA:</p>
+            </div>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <div class="gwatext">
+              <p class="text1">Current</p>
+              <p class="text2">GWA:</p>
+            </div>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <div class="gwatext">
+              <p class="text1">Overall</p>
+              <p class="text2">GWA:</p>
+            </div>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <div class="gwatext">
+              <p class="text1">Expected</p>
+              <p class="text2">GWA:</p>
+            </div>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

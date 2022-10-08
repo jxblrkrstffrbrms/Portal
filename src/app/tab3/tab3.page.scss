@@ -1,0 +1,64 @@
+.text {
+    position: relative;
+    font-family: 'Aileron-Heavy', sans-serif;
+    font-size: 40px;
+    font-weight:900;
+    left: 5%;
+    line-height: 1px;
+    
+    .text1 {
+      font-family: Aileron-Heavy;
+    }
+    .text2{
+      font-family: Aileron-Heavy;
+      color: darkred;
+    }
+    }
+
+.chart{
+    position: relative;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 3%;
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.20),
+    0px 1px 3px 0px rgba(0,0,0,0.02);
+    --border: none;
+    border-radius: 20px;
+    height: 300px;
+}
+
+ion-grid{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.gwatext {
+        position: relative;
+        font-family: 'Aileron-Heavy', sans-serif;
+        font-size: 20px;
+        font-weight:900;
+        padding-top: 0%;
+        line-height: 1px;
+        
+        .text1 {
+          font-family: Aileron-Heavy;
+          color: black;
+        }
+        .text2{
+          font-family: Aileron-Heavy;
+          color: darkred;
+        }
+    }
+
+ion-card{
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.20),
+    0px 1px 3px 0px rgba(0,0,0,0.02);
+    --border: none;
+    border-radius: 20px;
+    height: 130px;
+}
+
+ion-card-title{
+    font-family: 'Glacial-Indifference', sans-serif;
+        font-size: 18px;
+}
