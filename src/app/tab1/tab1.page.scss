@@ -2,7 +2,6 @@
   font-family: 'Arimo', sans-serif !important;
 }
 
-
 .logo{
   position: fixed;
   margin-top: 15%;
@@ -11,16 +10,13 @@
 }
 
 .line{
-  position: fixed;
-  margin-top: 2%;
+  position: relative;
+  margin-top: 5%;
   margin-left: 30%;
   width: 40%;
 }
 
-
-@-webkit-keyframes scale-up-ver-bottom{0%{-webkit-transform:scaleY(.4);transform:scaleY(.4);-webkit-transform-origin:0 100%;transform-origin:0 100%}100%{-webkit-transform:scaleY(1);transform:scaleY(1);-webkit-transform-origin:0 100%;transform-origin:0 100%}}@keyframes scale-up-ver-bottom{0%{-webkit-transform:scaleY(.4);transform:scaleY(.4);-webkit-transform-origin:0 100%;transform-origin:0 100%}100%{-webkit-transform:scaleY(1);transform:scaleY(1);-webkit-transform-origin:0 100%;transform-origin:0 100%}}  
 .content {
-  -webkit-animation:scale-up-ver-bottom .7s cubic-bezier(.39,.575,.565,1.000) both;animation:scale-up-ver-bottom .7s cubic-bezier(.39,.575,.565,1.000) both;
   position: relative;
   margin-top: 85%;
   background-color: white;
@@ -28,6 +24,13 @@
   border-top-right-radius: 40px;
   height: auto;
   width: 100%;
+
+  .line{
+    position: relative;
+    padding-top: 3%;
+    margin-left: 30%;
+    width: 40%;
+  }
 }
 
 #videoBG{
@@ -52,7 +55,7 @@ z-index: -1;
 .text {
 position: relative;
 font-family: 'Aileron-Heavy', sans-serif;
-font-size: 40px;
+font-size: 35px;
 font-weight:900;
 padding-top: 5%;
 left: 5%;
@@ -138,16 +141,14 @@ ion-slides{
   height: 50%;
 }
 
-@-webkit-keyframes tracking-in-contract{0%{letter-spacing:1em;opacity:0}40%{opacity:.6}100%{letter-spacing:normal;opacity:1}}@keyframes tracking-in-contract{0%{letter-spacing:1em;opacity:0}40%{opacity:.6}100%{letter-spacing:normal;opacity:1}}
 .tneu {
-  -webkit-animation:tracking-in-contract .8s cubic-bezier(.215,.61,.355,1.000) both;animation:tracking-in-contract .8s cubic-bezier(.215,.61,.355,1.000) both;
   position: fixed;
   font-family: 'League-Spartan', sans-serif;
   font-size: 55px;
   color: white;
   font-weight:900;
   left: 5%;
-  top: 58%;
+  top: 55%;
   line-height: 1px;
   line-break: 5px;
   
@@ -217,4 +218,11 @@ ion-slides{
 
 .abtbsu{
   padding-bottom: 20px;
+}
+
+ion-card{
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.20),
+    0px 1px 3px 0px rgba(0,0,0,0.02);
+    --border: none;
+    border-radius: 30px;
 }

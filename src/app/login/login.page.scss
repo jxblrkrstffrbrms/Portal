@@ -28,9 +28,7 @@ ion-content{
   width: 40%;
 }
 
-@-webkit-keyframes scale-up-ver-bottom{0%{-webkit-transform:scaleY(.4);transform:scaleY(.4);-webkit-transform-origin:0 100%;transform-origin:0 100%}100%{-webkit-transform:scaleY(1);transform:scaleY(1);-webkit-transform-origin:0 100%;transform-origin:0 100%}}@keyframes scale-up-ver-bottom{0%{-webkit-transform:scaleY(.4);transform:scaleY(.4);-webkit-transform-origin:0 100%;transform-origin:0 100%}100%{-webkit-transform:scaleY(1);transform:scaleY(1);-webkit-transform-origin:0 100%;transform-origin:0 100%}}  
   .content {
-    -webkit-animation:scale-up-ver-bottom .7s cubic-bezier(.39,.575,.565,1.000) both;animation:scale-up-ver-bottom .7s cubic-bezier(.39,.575,.565,1.000) both;
     margin-top: 15%;
     background-color: white;
     position: fixed;
@@ -41,7 +39,6 @@ ion-content{
   }
 
   form{
-    -webkit-animation:scale-up-ver-bottom .7s cubic-bezier(.39,.575,.565,1.000) both;animation:scale-up-ver-bottom .7s cubic-bezier(.39,.575,.565,1.000) both;
     position: absolute;
     width: 90%;
     padding-left: 10%;
@@ -70,8 +67,8 @@ ion-content{
       width: 100%;
       font-weight: 600;
       font-size: 14px;
+      margin-top: 4%;
       color: #4a4a4a;
-      padding-top: 5%;
   }
 }
 

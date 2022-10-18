@@ -1,55 +1,46 @@
-.profile{
-    background-color: darkred;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-    position: fixed;
-}
-
-.line{
+.text {
     position: relative;
-    margin-left: 30%;
-    width: 40%;
-    padding-bottom: 2%;
-  }
-
-.idpic{
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 35%;
-    height: 35%;
-    margin-top: 5%;
-}
-
-.text{
-    position: relative;
+    font-family: 'Aileron-Heavy', sans-serif;
+    font-size: 35px;
+    font-weight:900;
+    left: 5%;
     line-height: 1px;
-
-    .name{
-        font-family: 'Aileron-Heavy', sans-serif;
-        font-size: 30px;
-        color: white;
-        text-align: center;
+    
+    .text1 {
+      font-family: Aileron-Heavy;
     }
 
-    .course{
-        font-family: 'Aileron-Heavy', sans-serif;
-        font-size: 17px;
-        color: white;
-        text-align: center;
+    .text2{
+      font-family: Aileron-Heavy;
+      color: darkred;
     }
 
-    .srcode{
-        font-family: 'Aileron-Heavy', sans-serif;
-        font-size: 17px;
-        color: white;
-        text-align: center;
+    .text3{
+        font-size: 25px;
+        font-family: Aileron-Heavy;
+        position: relative;
+        left: 5%;
+      }
+
+      .text4{
+        font-size: 15px;
+        font-family: Aileron-Heavy;
+        color: darkred;
+        position: relative;
+        left: 5%;
+      }
+
+    .idpic{
+        position: relative;
+        left: 25%;
+        transform: translateX(-50%);
+        width: 35%;
+        height: 35%;
     }
-}
+    }
 
 .buttons{
     position: relative;
-    top: 40%;
 }
 
 .button{
@@ -60,8 +51,16 @@
 
     .label{
         font-family: 'Glacial-Indifference', sans-serif;
-        font-size: 18px;
+        font-size: 16px;
     }
+}
+
+ion-grid{
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.20),
+    0px 1px 3px 0px rgba(0,0,0,0.02);
+    --border: none;
+    border-radius: 20px;
+    margin-bottom: 5%;
 }
 
 
