@@ -18,7 +18,7 @@ ion-content{
   font-size: 35px;
   text-align: center;
   color: #454548;
-  margin-top: 7%;
+  margin-top: 5%;
 }
 
 .line{
@@ -38,11 +38,11 @@ ion-content{
     width: 100%;
   }
 
-  form{
-    position: absolute;
+  .form{
+    position: fixed;
     width: 90%;
     padding-left: 10%;
-    margin-top: 40%;
+    margin-top: 35%;
 
     .forgot-password-link{
         text-decoration: none;
@@ -54,12 +54,7 @@ ion-content{
         color: #4a4a4a;
         padding-top: 5%;
     }
-    ion-button{
-        margin-top: 35%;
-        font-family: 'Aileron-Heavy';
-        font-size: 15px;
-        border-radius: 50%;
-    }
+
     .contact-us{
       text-decoration: none;
       display: block;
@@ -72,9 +67,19 @@ ion-content{
   }
 }
 
+ion-button{
+        margin-top: 35%;
+        font-family: 'Aileron-Heavy';
+        font-size: 15px;
+        box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.20),
+    0px 1px 3px 0px rgba(0,0,0,0.02);
+    --border: none;
+    border-radius: 20px;
+    }
+
 .textform{
   font-family: 'Glacial-Indifference', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   padding-left: 5%;
   color: #454548;
   margin-top: 3%;
@@ -83,4 +88,5 @@ ion-content{
 .captcha{
   position: absolute;
   margin-top: 5%;
+  margin-left: 2%;
 }

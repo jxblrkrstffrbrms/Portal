@@ -1,0 +1,48 @@
+.text {
+    position: relative;
+    font-family: 'Aileron-Heavy', sans-serif;
+    font-size: 40px;
+    font-weight:900;
+    left: 5%;
+    line-height: 1px;
+    
+    .text1 {
+      font-family: Aileron-Heavy;
+    }
+    .text2{
+      font-family: Aileron-Heavy;
+      color: darkred;
+    }
+}
+
+.newspic{
+    position: relative;
+    width: 90%;
+    left: 5%;
+}
+
+.title{
+    position: relative;
+    font-family: Glacial-Indifference;
+    font-size: 25px;
+    left:5%;
+}
+
+.subtitle{
+    position: relative;
+    font-family: Glacial-Indifference;
+    font-size: 15px;
+    left:5%;
+}
+
+.content{
+    position: relative;
+    font-family: Glacial-Indifference;
+    font-size: 15px;
+    left: 5%;
+    margin-right: 5%;
+}
+
+.contents{
+    margin-right: 5%;
+}

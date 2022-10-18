@@ -49,6 +49,14 @@ const routes: Routes = [
   {
     path: 'qrcode',
     loadChildren: () => import('./profile/qrcode/qrcode.module').then( m => m.QrcodePageModule)
+  },
+  {
+    path: 'news',
+    loadChildren: () => import('./news/news/news.module').then( m => m.NewsPageModule)
+  },
+  {
+    path: 'news2',
+    loadChildren: () => import('./news/news2/news2.module').then( m => m.News2PageModule)
   }
 
 ];

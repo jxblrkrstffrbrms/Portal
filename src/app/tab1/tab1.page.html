@@ -22,21 +22,21 @@
     <div class="news">
       <ion-slides [options] ="options" class="ion-margin-top">
         <ion-slide>
-          <ion-card class="newscard">
+          <ion-card class="newscard" (click)="opennews()">
             <ion-card-header>
-              <ion-img src="./assets/pics/logo.png"></ion-img>
-              <ion-card-subtitle>Category</ion-card-subtitle>
-              <ion-card-title>Headline</ion-card-title>
+              <ion-img src="./assets/pics/news1.jpg" class="newspic"></ion-img>
+              <ion-card-subtitle>NEWS | September 29, 2022</ion-card-subtitle>
+              <ion-card-title>BatStateU officially opens its Gateway to Greatness: Gate 4 Façade, inaugurates the first Learning Development Center</ion-card-title>
             </ion-card-header>
           </ion-card>
       </ion-slide>
       
       <ion-slide>
-          <ion-card class="newscard">
+          <ion-card class="newscard" (click)="opennews2()">
             <ion-card-header>
-              <ion-img src="./assets/pics/logo.png"></ion-img>
-              <ion-card-subtitle>Category</ion-card-subtitle>
-              <ion-card-title>Headline</ion-card-title>
+              <ion-img src="./assets/pics/news2.jpg" class="newspic"></ion-img>
+              <ion-card-subtitle>NEWS | June 30, 2022</ion-card-subtitle>
+              <ion-card-title>ULille visits BatStateU to bolster int’l academic and research collaboration in Engineering and Technology</ion-card-title>
             </ion-card-header>
           </ion-card>
     </ion-slide>

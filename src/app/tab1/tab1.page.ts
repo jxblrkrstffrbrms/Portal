@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -7,7 +9,7 @@ import { HttpClient, HttpHeaders  } from '@angular/common/http';
 })
 export class Tab1Page {
   announcements = [];
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router:Router) {
     this.getAnnouncements();
   }
 
@@ -26,4 +28,11 @@ export class Tab1Page {
     console.log(this.announcements);
   }
 
+  opennews(){
+    this.router.navigate(['news'])
+  }
+
+  opennews2(){
+    this.router.navigate(['news2'])
+  }
 }
