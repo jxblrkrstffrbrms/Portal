@@ -41,6 +41,10 @@ export class Tab4Page implements OnInit {
     this.router.navigate(['subjects'])
   }
 
+  openannouncements(){
+    this.router.navigate(['announcement'])
+  }
+
   logout(){
     this.router.navigate(['login'])
   }

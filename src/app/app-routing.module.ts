@@ -57,6 +57,14 @@ const routes: Routes = [
   {
     path: 'news2',
     loadChildren: () => import('./news/news2/news2.module').then( m => m.News2PageModule)
+  },
+  {
+    path: 'announcement',
+    loadChildren: () => import('./announcement/announcement.module').then( m => m.AnnouncementPageModule)
+  },
+  {
+    path: 'attend',
+    loadChildren: () => import('./attend/attend.module').then( m => m.AttendPageModule)
   }
 
 ];
