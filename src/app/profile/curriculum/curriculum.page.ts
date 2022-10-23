@@ -20,7 +20,7 @@ export class CurriculumPage implements OnInit {
 
 
   async getCurriculum() {
-    const res = await this.http.get<any>('https://bsu-api.herokuapp.com/bsu-api/students/19-03746/curriculum').toPromise();
+    const res = await this.http.get<any>('https://bsu-api.herokuapp.com/bsu-api/students/19-03745/curriculum').toPromise();
     //this.first = res.data.first
     //this.second = res.data.second
     //this.third = res.data.third

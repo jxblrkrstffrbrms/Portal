@@ -5,7 +5,7 @@
   </div>
 
   <ion-grid>
-    <div class="chart"></div>
+    <div class="chart"><ion-img  [src]="imageSource" class="px-5"></ion-img></div>
   </ion-grid>
   
 
@@ -19,6 +19,9 @@
               <p class="text2">GWA:</p>
             </div>
           </ion-card-header>
+          <ion-card-content class="large-text aileron">
+            {{ previous_sem }}
+          </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col>
@@ -29,6 +32,9 @@
               <p class="text2">GWA:</p>
             </div>
           </ion-card-header>
+          <ion-card-content class="large-text aileron">
+            {{ currentSem }}
+          </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
@@ -41,6 +47,9 @@
               <p class="text2">GWA:</p>
             </div>
           </ion-card-header>
+          <ion-card-content class="large-text aileron">
+            {{ overall }}
+          </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col>
@@ -51,6 +60,9 @@
               <p class="text2">GWA:</p>
             </div>
           </ion-card-header>
+          <ion-card-content class="large-text aileron">
+            {{ currentSem }}
+          </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>

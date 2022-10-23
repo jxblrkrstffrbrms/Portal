@@ -55,10 +55,30 @@ ion-card{
     0px 1px 3px 0px rgba(0,0,0,0.02);
     --border: none;
     border-radius: 20px;
-    height: 130px;
+    background-color: rgb(255, 255, 255);
+    height: 150px;
+}
+
+ion-card-header {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
 }
 
 ion-card-title{
     font-family: 'Glacial-Indifference', sans-serif;
         font-size: 18px;
+}
+ion-card-content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 50px;
+}
+.large-text {
+  text-align: center !important;
+  font-size: 45px !important;
+  color: rgb(0, 0, 0);
+}
+
+ion-img {
+  height: 300px;
 }
