@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -9,35 +8,16 @@ import { AlertController } from '@ionic/angular';
 export class Tab2Page {
   activeDays = []
   activeDate = null;
-  constructor(private alertController: AlertController) {}
 
-  async presentAlert() {
-    console.log(this.activeDate);
-    const alert = await this.alertController.create({
-      header: 'Add a reminder',
-      buttons: ['OK'],
-      inputs: [
-        {
-          placeholder: 'Name',
-        },
-        {
-          placeholder: 'Date',
-          attributes: {
-            maxlength: 8,
-          },
-        },
-        {
-          placeholder: 'Time',
-          attributes: {
-            maxlength: 8,
-          },
-        },
-      ],
-    });
+  today: number = Date.now()
 
-    await alert.present();
-  }
+  constructor() {}
 
-  
+  todoList =[{
+    itemName : 'Capstone Project 2',
+    itemDueDate: '11-19-22',
+    itemPriority: 'High',
+    itemCategory: 'School'
+  }]
 
 }

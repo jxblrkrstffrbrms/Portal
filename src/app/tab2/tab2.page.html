@@ -11,9 +11,38 @@
     <p class="text2">Activities</p>
   </div>
 
+  <ion-card *ngFor="let item of todoList" class="ion-margin">
+    <ion-card-header>
+      <ion-card-subtitle [style.color]="item.itemPriority === 'high' ? 'red': (item.itempriority === 'low' ? 'green' : 'orange')">
+        {{item.itemCategory}}
+      </ion-card-subtitle>
+      <ion-item>
+        <ion-icon *ngIf="item.itemPriority === 'high'" color="danger" size="small" name="ellipse"></ion-icon>
+        <ion-icon *ngIf="item.itemPriority === 'middle'" color="warning" size="small" name="ellipse"></ion-icon>
+        <ion-icon *ngIf="item.itemPriority === 'low'" color="success" size="small" name="ellipse"></ion-icon>
+
+        <ion-label>{{item.itemName}}</ion-label>
+      </ion-item>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-label>Due {{item.itemDueDate | date :'fullDate'}}</ion-label>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-item>
+        <ion-icon name="checkmark-outline">Mark as Done</ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="trash-outline">Cancel</ion-icon>
+      </ion-item>
+    </ion-row>
+  </ion-card>
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="presentAlert()">
+    <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
+
   </ion-fab>
 </ion-content>
