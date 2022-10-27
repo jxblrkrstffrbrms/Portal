@@ -11,15 +11,15 @@
     <p class="text2">Activities</p>
   </div>
 
-  <ion-card *ngFor="let item of todoList" class="ion-margin">
+  <ion-card *ngFor="let item of todoList; let i= index" class="ion-margin">
     <ion-card-header>
-      <ion-card-subtitle [style.color]="item.itemPriority === 'high' ? 'red': (item.itempriority === 'low' ? 'green' : 'orange')">
+      <ion-card-subtitle [style.color]="item.itemPriority === 'High' ? 'red': (item.itemPriority === 'Low' ? 'green' : 'orange')">
         {{item.itemCategory}}
       </ion-card-subtitle>
       <ion-item>
-        <ion-icon *ngIf="item.itemPriority === 'high'" color="danger" size="small" name="ellipse"></ion-icon>
-        <ion-icon *ngIf="item.itemPriority === 'middle'" color="warning" size="small" name="ellipse"></ion-icon>
-        <ion-icon *ngIf="item.itemPriority === 'low'" color="success" size="small" name="ellipse"></ion-icon>
+        <ion-icon *ngIf="item.itemPriority === 'High'" color="danger" size="small" name="ellipse"></ion-icon>
+        <ion-icon *ngIf="item.itemPriority === 'Middle'" color="warning" size="small" name="ellipse"></ion-icon>
+        <ion-icon *ngIf="item.itemPriority === 'Low'" color="success" size="small" name="ellipse"></ion-icon>
 
         <ion-label>{{item.itemName}}</ion-label>
       </ion-item>
@@ -33,14 +33,14 @@
       <ion-item>
         <ion-icon name="checkmark-outline">Mark as Done</ion-icon>
       </ion-item>
-      <ion-item>
+      <ion-item button (click)="delete(i)">
         <ion-icon name="trash-outline">Cancel</ion-icon>
       </ion-item>
     </ion-row>
   </ion-card>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
+    <ion-fab-button (click)="addTask()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
 

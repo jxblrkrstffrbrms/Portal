@@ -65,6 +65,10 @@ const routes: Routes = [
   {
     path: 'attend',
     loadChildren: () => import('./attend/attend.module').then( m => m.AttendPageModule)
+  },
+  {
+    path: 'task',
+    loadChildren: () => import('./task/task.module').then( m => m.TaskPageModule)
   }
 
 ];

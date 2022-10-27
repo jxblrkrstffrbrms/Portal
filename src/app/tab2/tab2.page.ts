@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { TaskPage } from '../task/task.page';
 
 @Component({
   selector: 'app-tab2',
@@ -11,13 +13,26 @@ export class Tab2Page {
 
   today: number = Date.now()
 
-  constructor() {}
+  constructor(public modalCtrl: ModalController) {}
 
-  todoList =[{
-    itemName : 'Capstone Project 2',
-    itemDueDate: '11-19-22',
-    itemPriority: 'High',
-    itemCategory: 'School'
-  }]
+  todoList =[]
+
+  async addTask(){
+    const modal = await this.modalCtrl.create({
+      component: TaskPage
+    })
+
+    modal.onDidDismiss().then(newTaskObj =>{
+      console.log(newTaskObj.data);
+      this.todoList.push(newTaskObj.data)
+    })
+
+    return await modal.present()
+  }
+
+  delete(index){
+    this.todoList.splice(index,1)
+
+  }
 
 }
