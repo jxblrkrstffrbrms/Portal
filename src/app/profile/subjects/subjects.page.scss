@@ -22,3 +22,19 @@ img {
 .arimo {
   font-family: 'Arimo', sans-serif !important;
 }
+
+ion-card{
+  border-radius: 15px;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.20), 0px 1px 3px 0px rgba(0,0,0,0.02);
+}
+
+.code{
+  font-family: League-Spartan;
+  color: darkgreen;
+  font-size: 14px;
+}
+
+ion-card-title{
+  font-family: Aileron-Heavy;
+  font-size: 20px;
+}

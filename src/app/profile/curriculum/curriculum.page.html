@@ -13,9 +13,13 @@
   </div>
   <ion-card *ngFor="let subject of fourth">
     <ion-card-header>
-      <ion-card-subtitle class="aileron">Fourth year </ion-card-subtitle>
-      <ion-card-title class="aileron">{{ subject.code }} - {{ subject.name}}</ion-card-title>
+      <ion-card-subtitle class="code">FOURTH YEAR </ion-card-subtitle>
+      <ion-card-title>{{ subject.name }}</ion-card-title>
     </ion-card-header>
+
+    <ion-card-content>
+      <ion-label><ion-icon name="list-outline"></ion-icon> &nbsp; {{ subject.code }}</ion-label>
+    </ion-card-content>
   </ion-card>
 </ion-content>
 

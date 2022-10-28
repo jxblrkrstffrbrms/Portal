@@ -21,7 +21,7 @@
         <ion-icon *ngIf="item.itemPriority === 'Middle'" color="warning" size="small" name="ellipse"></ion-icon>
         <ion-icon *ngIf="item.itemPriority === 'Low'" color="success" size="small" name="ellipse"></ion-icon>
 
-        <ion-label class="tasklabel">{{item.itemName}}</ion-label>
+        <ion-label class="tasklabel">&nbsp;{{item.itemName}}</ion-label>
       </ion-item>
     </ion-card-header>
 
@@ -30,10 +30,10 @@
     </ion-card-content>
 
     <ion-row>
-      <ion-item>
+      <ion-item lines="none">
         <ion-icon name="checkmark-outline">Mark as Done</ion-icon>
       </ion-item>
-      <ion-item button (click)="delete(i)">
+      <ion-item button (click)="delete(i)" lines="none">
         <ion-icon name="trash-outline">Cancel</ion-icon>
       </ion-item>
     </ion-row>
