@@ -69,6 +69,10 @@ const routes: Routes = [
   {
     path: 'task',
     loadChildren: () => import('./task/task.module').then( m => m.TaskPageModule)
+  },
+  {
+    path: 'update-task',
+    loadChildren: () => import('./update-task/update-task.module').then( m => m.UpdateTaskPageModule)
   }
 
 ];

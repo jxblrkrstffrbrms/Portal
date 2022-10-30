@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { TaskPage } from '../task/task.page';
+import { TodoService } from '../todo.service';
+import { UpdateTaskPage } from '../update-task/update-task.page';
 
 @Component({
   selector: 'app-tab2',
@@ -13,7 +15,9 @@ export class Tab2Page {
 
   today: number = Date.now()
 
-  constructor(public modalCtrl: ModalController) {}
+  constructor(public modalCtrl: ModalController, public todoService: TodoService) {
+    this.getAllTask()
+  }
 
   todoList =[]
 
@@ -23,16 +27,33 @@ export class Tab2Page {
     })
 
     modal.onDidDismiss().then(newTaskObj =>{
-      console.log(newTaskObj.data);
-      this.todoList.push(newTaskObj.data)
+      this.getAllTask()
     })
 
     return await modal.present()
   }
 
-  delete(index){
-    this.todoList.splice(index,1)
-
+  delete(key){
+    this.todoService.deleteTask(key)
+    this.getAllTask()
   }
 
+  getAllTask(){
+    this.todoList = this.todoService.getAllTasks()
+    console.log(this.todoService.getAllTasks());
+  }
+
+  async update(selectedTask){
+    const modal = await this.modalCtrl.create({
+      component: UpdateTaskPage,
+      componentProps: {task: selectedTask}
+    })
+    console.log(selectedTask);
+
+    modal.onDidDismiss().then(() =>{
+      this.getAllTask()
+    })
+
+    return await modal.present()
+  }
 }

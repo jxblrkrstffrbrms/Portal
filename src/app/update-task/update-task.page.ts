@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { TodoService } from '../todo.service';
 
 @Component({
-  selector: 'app-task',
-  templateUrl: './task.page.html',
-  styleUrls: ['./task.page.scss'],
+  selector: 'app-update-task',
+  templateUrl: './update-task.page.html',
+  styleUrls: ['./update-task.page.scss'],
 })
-export class TaskPage implements OnInit {
+export class UpdateTaskPage implements OnInit {
+  @Input() task;
+
   categories = ['Personal', 'School', 'Work', 'Home']
 
+  
   taskName
   taskDate
   taskPriority
@@ -19,6 +22,11 @@ export class TaskPage implements OnInit {
   constructor(public modalCtrl: ModalController, public todoService: TodoService) { }
 
   ngOnInit() {
+    this.taskName = this.task.value.taskName
+    this.taskDate = this.task.value.taskDate
+    this.taskPriority = this.task.value.taskPriority
+    this.taskCategory = this.task.value.taskCategory
+
   }
 
   async dismiss(){
@@ -29,18 +37,10 @@ export class TaskPage implements OnInit {
     this.taskCategory = this.categories[index]
   }
 
-  async AddTask(){
+  async update(){
     this.taskObject = ({itemName:this.taskName, itemDueDate:this.taskDate, itemPriority:this.taskPriority, itemCategory:this.taskCategory})
-    let uid = this.taskName + this.taskDate
-
-    if(uid){
-      await this.todoService.addTask(uid, this.taskObject)
-    }
-    else{
-      console.log("can't save empty task");
-    }
-    
-
+    let uid= this.task.key
+    await this.todoService.updateTask(uid, this.taskObject)
     this.dismiss()
   }
 
