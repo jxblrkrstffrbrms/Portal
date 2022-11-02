@@ -1,9 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>attend</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
-</ion-content>
+  <ion-grid>
+    <ion-row style="height: 750px">
+      <ion-col class="ion-text-center">
+        <ion-button (click) ="scan()" *ngIf="!showScan">SCAN CLASS QR</ion-button>
+        <ion-card>
+          <video #video [hidden]="!showScan" height="650px" width="100%"></video>
+          <canvas #canvas hidden></canvas>
+        </ion-card>
+        <ion-button color="danger" (click) ="stopScan()" *ngIf="showScan">CANCEL</ion-button>
+      </ion-col>
+     
+    </ion-row>
+  </ion-grid>
+  
+  </ion-content>
+  
