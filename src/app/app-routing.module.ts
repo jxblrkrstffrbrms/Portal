@@ -73,6 +73,18 @@ const routes: Routes = [
   {
     path: 'update-task',
     loadChildren: () => import('./update-task/update-task.module').then( m => m.UpdateTaskPageModule)
+  },
+  {
+    path: 'firstsem',
+    loadChildren: () => import('./acad-calendar/firstsem/firstsem.module').then( m => m.FirstsemPageModule)
+  },
+  {
+    path: 'secondsem',
+    loadChildren: () => import('./acad-calendar/secondsem/secondsem.module').then( m => m.SecondsemPageModule)
+  },
+  {
+    path: 'midterm',
+    loadChildren: () => import('./acad-calendar/midterm/midterm.module').then( m => m.MidtermPageModule)
   }
 
 ];

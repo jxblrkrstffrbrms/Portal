@@ -35,4 +35,16 @@ export class Tab1Page {
   opennews2(){
     this.router.navigate(['news2'])
   }
+
+  openfirstsem(){
+    this.router.navigate(['firstsem'])
+  }
+
+  opensecondsem(){
+    this.router.navigate(['secondsem'])
+  }
+
+  openmidterms(){
+    this.router.navigate(['midterm'])
+  }
 }

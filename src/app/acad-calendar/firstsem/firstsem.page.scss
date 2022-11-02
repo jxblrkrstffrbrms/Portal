@@ -1,0 +1,33 @@
+.text {
+    position: relative;
+    font-family: 'Aileron-Heavy', sans-serif;
+    font-size: 35px;
+    font-weight:900;
+    padding-top: 5%;
+    left: 5%;
+    line-height: 1px;
+    
+    .text1 {
+      font-family: Aileron-Heavy;
+    }
+    .text2{
+      font-family: Aileron-Heavy;
+      color: darkred;
+    }
+    }
+
+ion-card{
+  border-radius: 15px;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.20), 0px 1px 3px 0px rgba(0,0,0,0.02);
+}
+
+.code{
+  font-family: League-Spartan;
+  color: darkgreen;
+  font-size: 14px;
+}
+
+ion-card-title{
+  font-family: Aileron-Heavy;
+  font-size: 20px;
+}
