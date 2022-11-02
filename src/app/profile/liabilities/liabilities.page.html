@@ -21,11 +21,12 @@
     <ion-card *ngFor="let liab of liabs">
       <ion-card-header>
         <ion-card-subtitle>{{ liab.sem }} </ion-card-subtitle>
-        <ion-card-title class="aileron">{{ liab.name }} (PHP {{ liab.amount }}</ion-card-title>
+        <ion-card-title>{{ liab.name }} (PHP {{ liab.amount }}.00)</ion-card-title>
       </ion-card-header>
     
-      <ion-card-content class="aileron">
-        {{ liab.note }}
+      <ion-card-content>
+        <ion-item lines="none">{{ liab.note }}</ion-item>
+        
       </ion-card-content>
     </ion-card>
 
