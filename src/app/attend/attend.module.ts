@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { AttendPageRoutingModule } from './attend-routing.module';
 
 import { AttendPage } from './attend.page';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AttendPageRoutingModule
+    AttendPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [AttendPage]
 })

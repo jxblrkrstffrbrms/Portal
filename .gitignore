@@ -31,3 +31,6 @@ npm-debug.log*
 /plugins
 /www
 android
+package-lock.json
+yarn.lock
+yarn.lock
