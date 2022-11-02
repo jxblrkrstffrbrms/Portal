@@ -1,13 +1,6 @@
 <ion-content [fullscreen]="true">
   <div class="text">
     <p class="text1">My</p>
-    <p class="text2">Calendar</p>
-  </div>
-  <div class="cldr">
-    <ion-datetime presentation="date" [(ngModel)]="activeDate"></ion-datetime>
-  </div>
-  <div class="text">
-    <p class="text1">My</p>
     <p class="text2">Activities</p>
   </div>
 
@@ -45,5 +38,11 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
 
+  </ion-fab>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="help-circle-outline"></ion-icon>
+    </ion-fab-button>
   </ion-fab>
 </ion-content>
