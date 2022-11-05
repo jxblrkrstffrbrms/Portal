@@ -1,15 +1,34 @@
 <ion-content>
   <ion-grid>
-    <ion-row style="height: 750px">
+    <ion-row>
       <ion-col class="ion-text-center">
         <ion-button (click) ="scan()" *ngIf="!showScan">SCAN CLASS QR</ion-button>
         <ion-card>
           <video #video [hidden]="!showScan" height="650px" width="100%"></video>
-          <canvas #canvas hidden></canvas>
+          <canvas #canvas hidden style="height: 750px"></canvas>
         </ion-card>
         <ion-button color="danger" (click) ="stopScan()" *ngIf="showScan">CANCEL</ion-button>
       </ion-col>
      
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-text-center attend" *ngIf="!showScan">
+        <b>PAST ATTENDANCE</b>
+
+        <ion-card *ngFor="let class of attendance">
+          <ion-card-header>
+            <ion-card-subtitle class="code">{{ class.date }} </ion-card-subtitle>
+              <ion-card-title>{{ class.subject}}</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-label><ion-icon name="person-outline"></ion-icon> &nbsp; {{ class.prof_name }}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      
     </ion-row>
   </ion-grid>
   

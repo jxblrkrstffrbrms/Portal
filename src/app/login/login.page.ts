@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
-import { AlertController } from '@ionic/angular';
-
+import { AlertController, ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -14,9 +13,11 @@ export class LoginPage implements OnInit {
   isSubmitted = false;
   sr_code = "";
   password = "";
+  handlerMessage = '';
+  roleMessage = '';
   protected aFormGroup: FormGroup;
 
-  constructor(private router:Router, public formBuilder: FormBuilder, private http: HttpClient, private alertController: AlertController) { }
+  constructor(private router:Router, public formBuilder: FormBuilder, private http: HttpClient, private alertController: AlertController, private toastController: ToastController) { }
 
   ngOnInit() {
     this.ionicForm = this.formBuilder.group({
@@ -31,6 +32,26 @@ export class LoginPage implements OnInit {
     });
   }
 
+  async presentToast(text) {
+    const toast = await this.toastController.create({
+      message: text,
+      duration: 3000,
+      color: 'danger',
+      buttons: [
+        {
+          text: 'Dismiss',
+          role: 'cancel',
+          handler: () => { this.handlerMessage = 'Dismiss clicked'; }
+        }
+      ]
+    });
+
+    await toast.present();
+
+    const { role } = await toast.onDidDismiss();
+    this.roleMessage = `Dismissed with role: ${role}`;
+  }
+
   get errorControl() {
     return this.ionicForm.controls;
   }
@@ -38,16 +59,18 @@ export class LoginPage implements OnInit {
   async submitForm() {
     this.isSubmitted = true;
     if (!this.ionicForm.valid) {
-      console.log('Please provide all the required values!')
+      await this.presentToast('Please complete all required fields');
       return false;
     } else {
       console.log('testing')
       const res = await this.http.post<any>('https://bsu-api.herokuapp.com//bsu-api/students/login', this.ionicForm.value).toPromise();
       console.log(res)
-      if (res){
+      if (res.message === 'Found a match on a student record.') {
         this.home();
       } else {
-        console.log("Invalid sr-code or password!")
+        this.sr_code = "";
+        this.password = "";
+        await this.presentToast('Invalid username or password');
       }
     }
   }

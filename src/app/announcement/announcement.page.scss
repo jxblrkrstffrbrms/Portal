@@ -1,0 +1,48 @@
+.text {
+    position: relative;
+    font-family: 'Aileron-Heavy', sans-serif;
+    font-size: 40px;
+    font-weight:900;
+    left: 5%;
+    line-height: 1px;
+    
+    .text1 {
+        font-size: 25px !important;
+        font-family: Aileron-Heavy;
+      }
+      .text2{
+        font-family: Aileron-Heavy;
+        color: darkred;
+      }
+    }
+    .text0 {
+        color: rgb(8, 189, 78);
+        font-size: 13px !important;
+        font-family: Aileron-Heavy;
+      }
+    .text1 {
+        font-size: 25px !important;
+        font-family: Aileron-Heavy;
+      }
+      .text2{
+        font-family: Aileron-Heavy;
+        color: darkred;
+      }
+.title {
+    font-family: Aileron-Heavy;
+    font-size: 25px;
+    color: black !important;
+}
+
+.button-text {
+    font-family: Aileron-Heavy;
+}
+
+.scroll {
+    height: 100%;
+}
+
+.empty-text {
+    font-size: 15px !important;
+    font-family: Aileron-Heavy;
+}

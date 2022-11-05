@@ -1,9 +1,93 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>announcement</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="height: 100%">
+  <div class="text">
+    <p class="text1" *ngIf="create_mode">Create announcement for</p>
+    <p class="text1" *ngIf="!create_mode">Announcements for</p>
+    <p class="text2">CICS</p>
+  </div>
+
+
+  <ion-row>
+    <ion-col class="title ion-text-center"  *ngIf="!create_mode">
+      <ion-button class="btn btn-danger button-text" (click)="create_mode = true">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-col> 
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="ion-text-center attend" *ngIf="!create_mode">
+
+      <ion-card *ngFor="let announcement of announcements">
+        <ion-card-header>
+          <ion-card-subtitle class="text0">{{ announcement.created_at }} </ion-card-subtitle>
+            <ion-card-title class="text1">{{ announcement.title}}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <p> {{ announcement.description }}</p>
+          <ion-label><ion-icon name="person-outline"></ion-icon> &nbsp; {{ announcement.created_by }}</ion-label>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    
+  </ion-row>
+
+
+
+  <ion-card class="card" *ngIf="create_mode && announcements; else empty">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="title">
+          <ion-item counter="true">
+            <ion-label position="stacked" class="title">Title</ion-label>
+            <ion-input maxlength="25" [clearOnEdit]="true" placeholder="Ex. Finals Schedule"  [(ngModel)]="title"></ion-input>
+          </ion-item>
+        </ion-col> 
+      </ion-row>
+      <ion-row>
+        <ion-col class="title">
+          <ion-item counter="true">
+            <ion-label position="stacked" class="title">Description</ion-label>
+            <ion-textarea  maxlength="200" placeholder="Ex. Postponed until further notice" [(ngModel)]="description" [autoGrow]="true">
+          </ion-textarea>
+
+          </ion-item>
+        </ion-col> 
+      </ion-row>
+      <ion-row>
+        <ion-col class="title ion-text-center">
+          <ion-button size="small" color="success" class="button-text" (click)="createAnnouncement()">
+            <ion-icon name="add-outline"></ion-icon>
+          </ion-button>
+          <ion-button size="small" class="button-text" (click)="create_mode = false">
+            <ion-icon name="close-outline"></ion-icon>
+          </ion-button>
+        </ion-col> 
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+
+  <ion-row *ngIf="!create_mode && !announcements">
+    <ion-col class="ion-text-center empty-text">
+      No announcements to show yet.
+    </ion-col>
+  </ion-row>
+
+
 
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>BSU Portal ©</ion-title>
+  </ion-toolbar>
+</ion-footer>

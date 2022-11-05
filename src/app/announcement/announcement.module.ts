@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { AnnouncementPageRoutingModule } from './announcement-routing.module';
 
 import { AnnouncementPage } from './announcement.page';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AnnouncementPageRoutingModule
+    AnnouncementPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [AnnouncementPage]
 })

@@ -16,6 +16,7 @@ export class AttendPage implements OnInit {
   scanner = null;
   showScan = false;
   loading: HTMLIonLoadingElement;
+  attendance = [];
   
   @ViewChild('video', {static: false}) video: ElementRef;
   @ViewChild('canvas', {static: false}) canvas: ElementRef;
@@ -24,7 +25,9 @@ export class AttendPage implements OnInit {
   canvasElement: any;
   canvasContext: any;
 
-  constructor(private loadingCtrl: LoadingController, private http: HttpClient, private globalService: GlobalService, private _router: Router, private alertController: AlertController) { }
+  constructor(private loadingCtrl: LoadingController, private http: HttpClient, private globalService: GlobalService, private _router: Router, private alertController: AlertController) {
+    this.getAttendance();
+  }
 
   ngAfterViewInit(){
     this.videoElement = this.video.nativeElement;
@@ -100,7 +103,7 @@ export class AttendPage implements OnInit {
 
   async attendClass(code){
     const sr = this.globalService.getCode()
-    const body = {srcode: sr}
+    const body = {sr_code: sr}
     const res = await this.http.post<any>(`https://bsu-api.herokuapp.com/bsu-api/classes/${code}`, body).toPromise();
     if (res.message == 'Class attendance has been registered'){
       const alert = await this.alertController.create({
@@ -115,5 +118,10 @@ export class AttendPage implements OnInit {
 
   stopScan(){
     this.showScan = false
+  }
+
+  async getAttendance() {
+    const res = await this.http.get<any>('http://127.0.0.1:5000/bsu-api/classes/19-03745/attended').toPromise();
+    this.attendance = res.results
   }
 }
