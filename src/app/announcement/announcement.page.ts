@@ -27,7 +27,7 @@ export class AnnouncementPage implements OnInit {
     }
     else {
       const add_body = {"title": this.title, "description": this.description, "department": "CICS", "sr_code": "19-03745"}
-      const res = await this.http.post<any>('http://127.0.0.1:5000/bsu-api/announcements', add_body).toPromise();
+      const res = await this.http.post<any>('https://bsu-api.herokuapp.com/bsu-api/announcements', add_body).toPromise();
       if (res.message === 'Successfully created announcement') {
         await this.presentToast(res.message, 'success')
         this.getAnnouncements();
@@ -62,7 +62,7 @@ export class AnnouncementPage implements OnInit {
   }
 
   async getAnnouncements() {
-    const res = await this.http.get<any>('http://127.0.0.1:5000/bsu-api/announcements/CICS').toPromise();
+    const res = await this.http.get<any>('https://bsu-api.herokuapp.com/bsu-api/announcements/CICS').toPromise();
     this.announcements = res.data
   }
 }
