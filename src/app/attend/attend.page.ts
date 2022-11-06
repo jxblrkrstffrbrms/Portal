@@ -124,4 +124,8 @@ export class AttendPage implements OnInit {
     const res = await this.http.get<any>('http://127.0.0.1:5000/bsu-api/classes/19-03745/attended').toPromise();
     this.attendance = res.results
   }
+
+  openabout(){
+    this._router.navigate(['abtattendance'])
+  }
 }

@@ -49,4 +49,8 @@ export class Tab4Page implements OnInit {
     this.router.navigate(['login'])
   }
 
+  openabout(){
+    this.router.navigate(['abtprofile'])
+  }
+
 }

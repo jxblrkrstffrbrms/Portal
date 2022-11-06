@@ -6,4 +6,32 @@
     font-family: League-Spartan;
     color: darkgreen;
     font-size: 14px;
-  }
+}
+
+.text {
+    position: relative;
+    font-family: 'Aileron-Heavy', sans-serif;
+    font-size: 35px;
+    font-weight:900;
+    left: 5%;
+    line-height: 1px;
+    
+    .text1 {
+      font-family: Aileron-Heavy;
+    }
+    .text2{
+      font-family: Aileron-Heavy;
+      color: darkred;
+    }
+}
+
+.pic{
+    position: relative;
+    width: 85%;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.20),
+    0px 1px 3px 0px rgba(0,0,0,0.02);
+    --border: none;
+    border-radius: 20px;
+}

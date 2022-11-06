@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -12,7 +13,7 @@ export class Tab3Page {
   imageSource = null;
   overall = "";
   previous_sem = "";
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router:Router) {
     this.setGrades();
    }
 
@@ -46,6 +47,10 @@ export class Tab3Page {
       });
     });
 
+  }
+
+  openabout(){
+    this.router.navigate(['abtgrades'])
   }
 
 }

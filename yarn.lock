@@ -293,6 +293,20 @@
   "resolved" "https://registry.npmjs.org/@assemblyscript/loader/-/loader-0.10.1.tgz"
   "version" "0.10.1"
 
+"@awesome-cordova-plugins/core@^6.0.1":
+  "integrity" "sha512-z5rKlTuQpLLPEIgzOmomQdoiRw5Sal2blh5CJRcjqh8ktspefbNC81Ni0MykPdV78/UlRORTHEzxugpcEcl1RQ=="
+  "resolved" "https://registry.npmjs.org/@awesome-cordova-plugins/core/-/core-6.2.0.tgz"
+  "version" "6.2.0"
+  dependencies:
+    "@types/cordova" "latest"
+
+"@awesome-cordova-plugins/local-notifications@^6.2.0":
+  "integrity" "sha512-WuTF3TOpFh/47PHV/ctOqsBV+NXIY208c+BAfNGnrIAAAd+M4m6PO8DsEWlr0lg3gno+xyqRxtVaoE9ZCndPUQ=="
+  "resolved" "https://registry.npmjs.org/@awesome-cordova-plugins/local-notifications/-/local-notifications-6.2.0.tgz"
+  "version" "6.2.0"
+  dependencies:
+    "@types/cordova" "latest"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.18.6":
   "integrity" "sha512-TDCmlK5eOvH+eH7cdAFlNXeVJqWIQ7gW9tY1GJIpUtFb6CmjVyq2VM3u71bOyR8CRihcCgMUYoDNyLXao3+70Q=="
   "resolved" "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.18.6.tgz"
@@ -1271,6 +1285,11 @@
   "resolved" "https://registry.npmjs.org/@capacitor/keyboard/-/keyboard-4.0.1.tgz"
   "version" "4.0.1"
 
+"@capacitor/local-notifications@^4.1.2":
+  "integrity" "sha512-oCUridU+QGQmvPfYgG2T03olsg3gVAMQg64I3azw17Ta6OuPCOJg8tf56OT872H9Dsvz0XBS2vBvNdgkYb2zMg=="
+  "resolved" "https://registry.npmjs.org/@capacitor/local-notifications/-/local-notifications-4.1.2.tgz"
+  "version" "4.1.2"
+
 "@capacitor/status-bar@4.0.1":
   "integrity" "sha512-BmEyOf3m/hAf8bO4hCX0m5gpQPSgd05mGYl+9E841WUZeJjcYlmiG/EBshAUb2uGCVtyNaG36yPXB0r0Ypg+rw=="
   "resolved" "https://registry.npmjs.org/@capacitor/status-bar/-/status-bar-4.0.1.tgz"
@@ -1425,6 +1444,20 @@
   "integrity" "sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA=="
   "resolved" "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   "version" "1.2.1"
+
+"@ionic-native/core@^5.1.0":
+  "integrity" "sha512-lOrkktadlKYbYf1LrDyAtsu1JnQ0oCCdkOU7iHQ8oXnNOkMwobFfD2m62F1CoOr0u9LIkpYnZSPjng8lZbmbNw=="
+  "resolved" "https://registry.npmjs.org/@ionic-native/core/-/core-5.36.0.tgz"
+  "version" "5.36.0"
+  dependencies:
+    "@types/cordova" "latest"
+
+"@ionic-native/local-notifications@^5.36.0":
+  "integrity" "sha512-X5grR2pJ8uLVyNeMB0NiErT/56y9623Tn01+WUVCGGIim+nc9oon8dPsuzj2RBbvssj7eKmBilq9Z04J8i72Qg=="
+  "resolved" "https://registry.npmjs.org/@ionic-native/local-notifications/-/local-notifications-5.36.0.tgz"
+  "version" "5.36.0"
+  dependencies:
+    "@types/cordova" "latest"
 
 "@ionic/angular-toolkit@^6.0.0":
   "integrity" "sha512-QZkoNdXej4MQqKGdm+suzTK39R0iRGpBFhOzP+f75v4ZGgEQ+ntA213UdaTa6EvsvS7n14p0zbHiBroLUOCNzQ=="
@@ -1841,6 +1874,11 @@
   "integrity" "sha512-XW/Aa8APYr6jSVVA1y/DEIZX0/GMKLEVekNG727R8cs56ahETkRAy/3DR7+fJyh7oUgGwNQaRfXCun0+KbWY7Q=="
   "resolved" "https://registry.npmjs.org/@types/cookie/-/cookie-0.4.1.tgz"
   "version" "0.4.1"
+
+"@types/cordova@latest":
+  "integrity" "sha512-rkiiTuf/z2wTd4RxFOb+clE7PF4AEJU0hsczbUdkHHBtkUmpWQpEddynNfJYKYtZFJKbq4F+brfekt1kx85IZA=="
+  "resolved" "https://registry.npmjs.org/@types/cordova/-/cordova-0.0.34.tgz"
+  "version" "0.0.34"
 
 "@types/cors@^2.8.12":
   "integrity" "sha512-vt+kDhq/M2ayberEtJcIN/hxXy1Pk+59g2FV/ZQceeaTyCtCucjL2Q7FXlFjtWn4n15KCr1NE2lNNFhp0lEThw=="
@@ -3417,6 +3455,11 @@
     "normalize-path" "^3.0.0"
     "schema-utils" "^4.0.0"
     "serialize-javascript" "^6.0.0"
+
+"cordova-plugin-local-notification@^0.9.0-beta.2":
+  "integrity" "sha512-63n77K1pt8dnbWnNR8QWETi9Glezi1bvNHvHWmGNIOv0xCb0phZnm+Ku49BQ+omwe8Z5voMvrA4I03SYPpv38w=="
+  "resolved" "https://registry.npmjs.org/cordova-plugin-local-notification/-/cordova-plugin-local-notification-0.9.0-beta.2.tgz"
+  "version" "0.9.0-beta.2"
 
 "core-js-compat@^3.21.0", "core-js-compat@^3.22.1":
   "integrity" "sha512-extKQM0g8/3GjFx9US12FAgx8KJawB7RCQ5y8ipYLbmfzEzmFRWdDjIlxDx82g7ygcNG85qMVUSRyABouELdow=="
@@ -8674,6 +8717,8 @@
     "glob" "^7.0.5"
 
 "rimraf@^2.6.2":
+  "integrity" "sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w=="
+  "resolved" "https://registry.npmjs.org/rimraf/-/rimraf-2.7.1.tgz"
   "version" "2.7.1"
   dependencies:
     "glob" "^7.1.3"
@@ -8714,7 +8759,7 @@
   "resolved" "https://registry.npmjs.org/rxjs-for-await/-/rxjs-for-await-0.0.2.tgz"
   "version" "0.0.2"
 
-"rxjs@*", "rxjs@^6.0.0", "rxjs@^6.5.3 || ^7.4.0", "rxjs@^6.5.4", "rxjs@>=6.6.0", "rxjs@~6.6.0", "rxjs@6.6.7":
+"rxjs@*", "rxjs@^5.5.0 || ^6.5.0", "rxjs@^5.5.0 || ^6.5.0 || ^7.3.0", "rxjs@^6.0.0", "rxjs@^6.5.3 || ^7.4.0", "rxjs@^6.5.4", "rxjs@>=6.6.0", "rxjs@~6.6.0", "rxjs@6.6.7":
   "integrity" "sha512-hTdwr+7yYNIT5n4AMYp85KA6yw2Va0FLa3Rguvbpa4W3I5xynaBZo41cM3XM+4Q6fRMj3sBYIR1VAmZMXYJvRQ=="
   "resolved" "https://registry.npmjs.org/rxjs/-/rxjs-6.6.7.tgz"
   "version" "6.6.7"

@@ -25,7 +25,7 @@
       </span>
       
 
-      <a routerLink="#" class="forgot-password-link" (click)="presentAlert()">Forgot  Password?</a>
+      <a routerLink="#" class="forgot-password-link" (click)="opencontacts()">Forgot  Password?</a>
 
       <div class="captcha">
         <form [formGroup]="aFormGroup">
@@ -38,7 +38,7 @@
 
     <ion-button type="submit" color="danger" expand="block">Submit</ion-button>
 
-    <a routerLink="#" class="contact-us">Contact Us</a>
+    <a routerLink="#" class="contact-us" (click)="opencontacts()">Contact Us</a>
   </form>
   </div>
   

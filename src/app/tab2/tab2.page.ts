@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { TaskPage } from '../task/task.page';
 import { TodoService } from '../todo.service';
 import { UpdateTaskPage } from '../update-task/update-task.page';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -15,8 +16,12 @@ export class Tab2Page {
 
   today: number = Date.now()
 
-  constructor(public modalCtrl: ModalController, public todoService: TodoService) {
+  constructor(public modalCtrl: ModalController, public todoService: TodoService, private router:Router) {
     this.getAllTask()
+  }
+
+  openabout(){
+    this.router.navigate(['aboutactivity'])
   }
 
   todoList =[]

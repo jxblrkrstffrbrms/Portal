@@ -81,18 +81,8 @@ export class LoginPage implements OnInit {
 
   siteKey: string ="6LcYev0hAAAAAJ9UIw1V2DTNTs0reCFD_sDAfS0T";
 
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      header: 'Forgot Password',
-      message: 'Enter your registered email address below. An email will be sent to this address for password reset confirmation.',
-      buttons: ['OK'],
-      inputs: [
-        {
-          placeholder: 'Email Address',
-        }]
-    });
-
-    await alert.present();
+  opencontacts(){
+    this.router.navigate(['contacts'])
   }
 
 }

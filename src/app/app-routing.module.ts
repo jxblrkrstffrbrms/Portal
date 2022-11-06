@@ -85,6 +85,26 @@ const routes: Routes = [
   {
     path: 'midterm',
     loadChildren: () => import('./acad-calendar/midterm/midterm.module').then( m => m.MidtermPageModule)
+  },
+  {
+    path: 'aboutactivity',
+    loadChildren: () => import('./about/aboutactivity/aboutactivity.module').then( m => m.AboutactivityPageModule)
+  },
+  {
+    path: 'abtattendance',
+    loadChildren: () => import('./about/abtattendance/abtattendance.module').then( m => m.AbtattendancePageModule)
+  },
+  {
+    path: 'abtgrades',
+    loadChildren: () => import('./about/abtgrades/abtgrades.module').then( m => m.AbtgradesPageModule)
+  },
+  {
+    path: 'abtprofile',
+    loadChildren: () => import('./about/abtprofile/abtprofile.module').then( m => m.AbtprofilePageModule)
+  },
+  {
+    path: 'contacts',
+    loadChildren: () => import('./about/contacts/contacts.module').then( m => m.ContactsPageModule)
   }
 
 ];
