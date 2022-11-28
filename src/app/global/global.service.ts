@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -9,6 +8,8 @@ export class GlobalService {
   isStudent = null;
   name = null;
   section = null;
+  tasks = [];
+  public is_admin = false;
   constructor() { }
 
   setCode(code) {
@@ -42,6 +43,22 @@ export class GlobalService {
   getType() {
     return this.isStudent;
   }
+
+  setIsAdmin(type) {
+    this.is_admin = type;
+  }
+
+  setTasks(tasks) {
+    this.tasks = tasks;
+  }
+  
+  getTasks() {
+    return this.tasks
+  }
+
+
+
+
 
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
+import { GlobalService } from 'src/app/global/global.service';
 
 @Component({
   selector: 'app-curriculum',
@@ -11,7 +12,9 @@ export class CurriculumPage implements OnInit {
   second = []
   third = []
   fourth = []
-  constructor(private http: HttpClient) {
+  srcode = null;
+  constructor(private http: HttpClient, private globalService: GlobalService) {
+    this.srcode = this.globalService.getCode()
     this.getCurriculum();
    }
 
@@ -20,7 +23,7 @@ export class CurriculumPage implements OnInit {
 
 
   async getCurriculum() {
-    const res = await this.http.get<any>('https://bsu-api.herokuapp.com/bsu-api/students/19-03745/curriculum').toPromise();
+    const res = await this.http.get<any>(`http://18.141.228.159:8080/bsu-api/students/${this.srcode}/curriculum`).toPromise();
     //this.first = res.data.first
     //this.second = res.data.second
     //this.third = res.data.third

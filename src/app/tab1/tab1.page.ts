@@ -23,7 +23,7 @@ export class Tab1Page {
   }
 
   async getAnnouncements() {
-    const res = await this.http.get<any>('https://bsu-api.herokuapp.com/bsu-api/announcements').toPromise();
+    const res = await this.http.get<any>('http://18.141.228.159:8080/bsu-api/announcements').toPromise();
     this.announcements = res.data
     console.log(this.announcements);
   }

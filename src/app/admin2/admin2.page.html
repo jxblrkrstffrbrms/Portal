@@ -1,0 +1,58 @@
+
+
+<ion-content>
+  <div class="text">
+    <p class="text1">View class</p>
+    <p class="text2">Attendance</p>
+  </div>
+  <ion-grid>
+    <ion-row class="ion-text-center">
+      <ion-col size="12" class="ion-text-center">
+
+        <ion-list class="pr-2">
+          <ion-item>
+            <ion-select [(ngModel)]="selectedSubject" (ngModelChange)="selected()" interface="action-sheet" placeholder="Select subject">
+              <ion-select-option [value]="subject._id" *ngFor="let subject of subjects">{{subject.code}} - {{subject.prof_name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+
+        <ion-list *ngIf="selectedSubject" class="pr-2">
+          <ion-item>
+            <ion-select [(ngModel)]="selectedClass" (ngModelChange)="selectClass()" interface="action-sheet" placeholder="Select class">
+              <ion-select-option [value]="class.code" *ngFor="let class of classes">{{class.date}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+
+        <div *ngIf="selectedSubject && !selectedClass && !imageSource">
+          <ion-button color="secondary" expand="block" (click)="createClass()">CREATE CLASS</ion-button>
+        </div>
+
+
+        <ion-col sm>
+          <div *ngIf="imageSource"><ion-img  [src]="imageSource" class="px-5"></ion-img></div>
+        </ion-col>
+
+        <div *ngIf="selectedClass && exportLink" class="ion-text-center">
+          <div class="pt-2">
+            <ion-button [href]="exportLink" color="success" expand="block">EXPORT</ion-button>
+          </div>
+   
+          <ion-card  *ngFor="let attendee of attendees">
+            <ion-card-header>
+              <ion-card-subtitle class="text0">{{ attendee.subject }} </ion-card-subtitle>
+                <ion-card-title class="text1">{{ attendee.name }}</ion-card-title>
+            </ion-card-header>
+          
+            <ion-card-content>
+              <p> {{ attendee.date }}</p>
+              <ion-label><ion-icon name="person-outline"></ion-icon> &nbsp; {{ attendee.prof_name }}</ion-label>
+            </ion-card-content>
+          </ion-card>
+        </div>
+       
+      </ion-col>
+    </ion-row> 
+  </ion-grid>
+</ion-content>

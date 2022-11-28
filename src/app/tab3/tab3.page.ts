@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { GlobalService } from '../global/global.service';
 
 @Component({
   selector: 'app-tab3',
@@ -13,12 +14,14 @@ export class Tab3Page {
   imageSource = null;
   overall = "";
   previous_sem = "";
-  constructor(private http: HttpClient, private router:Router) {
+  srcode = null;
+  constructor(private http: HttpClient, private router:Router, private gs: GlobalService) {
+    this.srcode = this.gs.getCode()
     this.setGrades();
    }
 
    async getGradeSummary() {
-    const res = await this.http.get<any>('https://bsu-api.herokuapp.com/bsu-api/grades/19-03745/gwa').toPromise();
+    const res = await this.http.get<any>(`http://18.141.228.159:8080/bsu-api/grades/${this.srcode}/gwa`).toPromise();
     this.currentSem = res.current_sem;
     this.overall = res.overall;
     this.previous_sem = res.previous_sem;
@@ -33,7 +36,7 @@ export class Tab3Page {
       responseType: 'blob'
     };
 
-    this.image = await this.http.get<any>(`https://bsu-api.herokuapp.com/bsu-api/grades/19-03745/graph`, httpOptions).toPromise();
+    this.image = await this.http.get<any>(`http://18.141.228.159:8080/bsu-api/grades/${this.srcode}/graph`, httpOptions).toPromise();
 
     this.imageSource = window.URL.createObjectURL(this.image);
   }

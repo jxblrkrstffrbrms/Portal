@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
+import { GlobalService } from 'src/app/global/global.service';
 
 @Component({
   selector: 'app-subjects',
@@ -8,7 +9,9 @@ import { HttpClient, HttpHeaders  } from '@angular/common/http';
 })
 export class SubjectsPage implements OnInit {
   subjects = []
-  constructor(private http: HttpClient) {
+  srcode = null;
+  constructor(private http: HttpClient, private gs: GlobalService) {
+    this.srcode = this.gs.getCode()
     this.getSubjects();
    }
 
@@ -16,7 +19,7 @@ export class SubjectsPage implements OnInit {
   }
   
   async getSubjects() {
-    const res = await this.http.get<any>('https://bsu-api.herokuapp.com/bsu-api/students/19-03745/subjects').toPromise();
+    const res = await this.http.get<any>(`http://18.141.228.159:8080/bsu-api/students/${this.srcode}/subjects`).toPromise();
     this.subjects = res.subjects
   }
 

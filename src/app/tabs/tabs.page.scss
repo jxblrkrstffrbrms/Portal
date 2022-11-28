@@ -12,6 +12,12 @@ ion-tab-bar{
         }
     }
 
+    ion-button {
+        ion-icon{
+            transition: 200ms all ease-in-out;
+        }
+    }
+
     .tab-selected {
         ion-icon {
             color: darkred;

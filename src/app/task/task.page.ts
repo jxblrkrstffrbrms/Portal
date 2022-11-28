@@ -31,7 +31,7 @@ export class TaskPage implements OnInit {
 
   async AddTask(){
     this.taskObject = ({itemName:this.taskName, itemDueDate:this.taskDate, itemPriority:this.taskPriority, itemCategory:this.taskCategory})
-    let uid = this.taskName + this.taskDate
+    let uid = 'activity' + this.taskName + this.taskDate
 
     if(uid){
       await this.todoService.addTask(uid, this.taskObject)
@@ -39,7 +39,6 @@ export class TaskPage implements OnInit {
     else{
       console.log("can't save empty task");
     }
-    
 
     this.dismiss()
   }

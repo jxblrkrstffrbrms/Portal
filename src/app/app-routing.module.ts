@@ -105,6 +105,14 @@ const routes: Routes = [
   {
     path: 'contacts',
     loadChildren: () => import('./about/contacts/contacts.module').then( m => m.ContactsPageModule)
+  },
+  {
+    path: 'admin1',
+    loadChildren: () => import('./admin1/admin1.module').then( m => m.Admin1PageModule)
+  },
+  {
+    path: 'admin2',
+    loadChildren: () => import('./admin2/admin2.module').then( m => m.Admin2PageModule)
   }
 
 ];

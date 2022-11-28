@@ -3,11 +3,11 @@ import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { AlertController, ToastController } from '@ionic/angular';
 import { GlobalService } from '../global/global.service';
 @Component({
-  selector: 'app-announcement',
-  templateUrl: './announcement.page.html',
-  styleUrls: ['./announcement.page.scss'],
+  selector: 'app-admin1',
+  templateUrl: './admin1.page.html',
+  styleUrls: ['./admin1.page.scss'],
 })
-export class AnnouncementPage implements OnInit {
+export class Admin1Page implements OnInit {
   title = "";
   description = "";
   handlerMessage = '';
@@ -15,11 +15,11 @@ export class AnnouncementPage implements OnInit {
   create_mode = false;
   department = "CICS";
   announcements = []
-  constructor(private http: HttpClient, private toastController: ToastController, private globalService: GlobalService) {
-    this.getAnnouncements();
-   }
+  loading = false;
+  constructor(private http: HttpClient, private toastController: ToastController, private globalService: GlobalService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.getAnnouncements();
   }
 
   async createAnnouncement() {
@@ -27,18 +27,20 @@ export class AnnouncementPage implements OnInit {
       await this.presentToast('Please complete all required fields', 'danger')
     }
     else {
+      console.log(this.globalService.getCode())
+      this.loading = true;
       const add_body = {"title": this.title, "description": this.description, "department": "CICS", "sr_code": this.globalService.getCode()}
       const res = await this.http.post<any>('http://18.141.228.159:8080/bsu-api/announcements', add_body).toPromise();
       if (res.message === 'Successfully created announcement') {
-        await this.presentToast(res.message, 'success')
         this.getAnnouncements();
         this.create_mode = false
+        await this.presentToast(res.message, 'success')
       } else {
         this.create_mode = false
         await this.presentToast(res.message, 'danger')
       }
+      this.loading = false;
     }
-
   }
   
 
@@ -65,5 +67,13 @@ export class AnnouncementPage implements OnInit {
   async getAnnouncements() {
     const res = await this.http.get<any>('http://18.141.228.159:8080/bsu-api/announcements/CICS').toPromise();
     this.announcements = res.data
+  }
+
+
+  edit() {
+    console.log("sdsds")
+    this.create_mode = true;
+    this.title = "";
+    this.description = "";
   }
 }

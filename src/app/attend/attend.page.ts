@@ -13,8 +13,11 @@ import { Router } from '@angular/router';
 export class AttendPage implements OnInit {
 
   scannedCode = null;
+  srcode = null;
   scanner = null;
   showScan = false;
+  handlerMessage;
+  roleMessage;
   loading: HTMLIonLoadingElement;
   attendance = [];
   
@@ -25,7 +28,8 @@ export class AttendPage implements OnInit {
   canvasElement: any;
   canvasContext: any;
 
-  constructor(private loadingCtrl: LoadingController, private http: HttpClient, private globalService: GlobalService, private _router: Router, private alertController: AlertController) {
+  constructor(private toastController: ToastController, private loadingCtrl: LoadingController, private http: HttpClient, private globalService: GlobalService, private _router: Router, private alertController: AlertController) {
+    this.srcode = this.globalService.getCode()
     this.getAttendance();
   }
 
@@ -36,7 +40,6 @@ export class AttendPage implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
   async scan(){
@@ -102,17 +105,13 @@ export class AttendPage implements OnInit {
   }
 
   async attendClass(code){
-    const sr = this.globalService.getCode()
-    const body = {sr_code: sr}
-    const res = await this.http.post<any>(`https://bsu-api.herokuapp.com/bsu-api/classes/${code}`, body).toPromise();
+    const body = {sr_code: this.srcode}
+    console.log(body);
+    const res = await this.http.post<any>(`http://18.141.228.159:8080/bsu-api/classes/${code}`, body).toPromise();
     if (res.message == 'Class attendance has been registered'){
-      const alert = await this.alertController.create({
-        header: 'Congratulations',
-        message: 'You have successfully attended this class!',
-        buttons: ['OK']
-      });
-  
-      await alert.present();
+      this.presentToast('Registered attendance for this class.', 'success');
+    } else if (res.message == 'You have already attended this class.') {
+      this.presentToast('You already attended this class!', 'danger');
     }
   }
 
@@ -121,9 +120,31 @@ export class AttendPage implements OnInit {
   }
 
   async getAttendance() {
-    const res = await this.http.get<any>('https://bsu-api.herokuapp.com/bsu-api/classes/19-03745/attended').toPromise();
+    const res = await this.http.get<any>(`http://18.141.228.159:8080/bsu-api/classes/${this.srcode}/attended`).toPromise();
     this.attendance = res.results
   }
+
+
+  async presentToast(text, color) {
+    const toast = await this.toastController.create({
+      message: text,
+      duration: 3000,
+      color: color,
+      buttons: [
+        {
+          text: 'Dismiss',
+          role: 'cancel',
+          handler: () => { this.handlerMessage = 'Dismiss clicked'; }
+        }
+      ]
+    });
+
+    await toast.present();
+
+    const { role } = await toast.onDidDismiss();
+    this.roleMessage = `Dismissed with role: ${role}`;
+  }
+
 
   openabout(){
     this._router.navigate(['abtattendance'])

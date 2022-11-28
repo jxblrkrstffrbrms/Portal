@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoginPageRoutingModule } from './login-routing.module';
+import { Admin1PageRoutingModule } from './admin1-routing.module';
 
-import { LoginPage } from './login.page';
-import { NgxCaptchaModule } from 'ngx-captcha';
+import { Admin1Page } from './admin1.page';
+import { LocalNotifications } from '@capacitor/local-notifications';
 import { HttpClientModule } from '@angular/common/http';
 import { TabsPage } from '../tabs/tabs.page';
 @NgModule({
@@ -15,12 +15,10 @@ import { TabsPage } from '../tabs/tabs.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule,
-    ReactiveFormsModule,
-    NgxCaptchaModule,
+    Admin1PageRoutingModule,
     HttpClientModule,
   ],
   providers: [TabsPage],
-  declarations: [LoginPage]
+  declarations: [Admin1Page]
 })
-export class LoginPageModule {}
+export class Admin1PageModule {}

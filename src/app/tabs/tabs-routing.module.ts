@@ -28,6 +28,14 @@ const routes: Routes = [
         loadChildren: () => import('../tab4/tab4.module').then(m => m.Tab4PageModule)
       },
       {
+        path: 'admin1',
+        loadChildren: () => import('../admin1/admin1.module').then(m => m.Admin1PageModule)
+      },
+      {
+        path: 'admin2',
+        loadChildren: () => import('../admin2/admin2.module').then(m => m.Admin2PageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

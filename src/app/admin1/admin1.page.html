@@ -1,10 +1,3 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content style="height: 100%">
   <div class="text">
@@ -13,8 +6,17 @@
     <p class="text2">CICS</p>
   </div>
 
+
   <ion-row>
-    <ion-col class="ion-text-center attend">
+    <ion-col class="title ion-text-center"  *ngIf="!create_mode">
+      <ion-button class="btn btn-danger button-text" (click)="edit()">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-col> 
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="ion-text-center attend" *ngIf="!create_mode">
 
       <ion-card *ngFor="let announcement of announcements">
         <ion-card-header>
@@ -56,7 +58,7 @@
       </ion-row>
       <ion-row>
         <ion-col class="title ion-text-center">
-          <ion-button size="small" color="success" class="button-text" (click)="createAnnouncement()">
+          <ion-button size="small" [disabled]="loading" color="success" class="button-text" (click)="createAnnouncement()">
             <ion-icon name="add-outline"></ion-icon>
           </ion-button>
           <ion-button size="small" class="button-text" (click)="create_mode = false">
@@ -77,8 +79,3 @@
 
 
 </ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>BSU Portal ©</ion-title>
-  </ion-toolbar>
-</ion-footer>
