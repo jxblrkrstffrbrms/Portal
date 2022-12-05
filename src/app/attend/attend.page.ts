@@ -110,6 +110,7 @@ export class AttendPage implements OnInit {
     const res = await this.http.post<any>(`http://18.141.228.159:8080/bsu-api/classes/${code}`, body).toPromise();
     if (res.message == 'Class attendance has been registered'){
       this.presentToast('Registered attendance for this class.', 'success');
+      this.getAttendance();
     } else if (res.message == 'You have already attended this class.') {
       this.presentToast('You already attended this class!', 'danger');
     }

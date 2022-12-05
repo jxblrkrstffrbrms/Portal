@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="text">
+    <p class="text1">My</p>
+    <p class="text2">Schedule</p>
+  </div>
+
+
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <div *ngIf="monday">
+        <h1>
+          Monday
+        </h1>
+        <ion-card *ngFor="let class of monday">
+          <ion-card-header>
+            <ion-card-subtitle class="code">{{ class.subject }} </ion-card-subtitle>
+              <ion-card-title>{{ class.time_start }} - {{ class.time_end }}</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-label><ion-icon name="person-outline"></ion-icon> &nbsp; {{ class.prof }}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      
+      <div *ngIf="tuesday">
+        <h1>
+          Tuesday
+        </h1>
+        <ion-card *ngFor="let class of tuesday">
+          <ion-card-header>
+            <ion-card-subtitle class="code">{{ class.subject }} </ion-card-subtitle>
+              <ion-card-title>{{ class.time_start }} - {{ class.time_end }}</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-label><ion-icon name="person-outline"></ion-icon> &nbsp; {{ class.prof }}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      
+      <div *ngIf="wednesday">
+        <h1>
+          Wednesday
+        </h1>
+        <ion-card *ngFor="let class of wednesday">
+          <ion-card-header>
+            <ion-card-subtitle class="code">{{ class.subject }} </ion-card-subtitle>
+              <ion-card-title>{{ class.time_start }} - {{ class.time_end }}</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-label><ion-icon name="person-outline"></ion-icon> &nbsp; {{ class.prof }}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div *ngIf="thursday">
+        <h1>
+          Thursday
+        </h1>
+        <ion-card *ngFor="let class of thursday">
+          <ion-card-header>
+            <ion-card-subtitle class="code">{{ class.subject }} </ion-card-subtitle>
+              <ion-card-title>{{ class.time_start }} {{ class.time_end }}</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-label><ion-icon name="person-outline"></ion-icon> &nbsp; {{ class.prof }}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div *ngIf="friday">
+        <h1>
+          Friday
+        </h1>
+        <ion-card *ngFor="let class of friday">
+          <ion-card-header>
+            <ion-card-subtitle class="code">{{ class.subject }} </ion-card-subtitle>
+              <ion-card-title>{{ class.time_start }} {{ class.time_end }}</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-label><ion-icon name="person-outline"></ion-icon> &nbsp; {{ class.prof }}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div *ngIf="saturday">
+        <h1>
+          Saturday
+        </h1>
+        <ion-card *ngFor="let class of saturday">
+          <ion-card-header>
+            <ion-card-subtitle class="code">{{ class.subject }} </ion-card-subtitle>
+              <ion-card-title>{{ class.time_start }} {{ class.time_end }}</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-label><ion-icon name="person-outline"></ion-icon> &nbsp; {{ class.prof }}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div *ngIf="sunday">
+        <h1>
+          Sunday
+        </h1>
+        <ion-card *ngFor="let class of sunday">
+          <ion-card-header>
+            <ion-card-subtitle class="code">{{ class.subject }} </ion-card-subtitle>
+              <ion-card-title>{{ class.time_start }} {{ class.time_end }}</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-label><ion-icon name="person-outline"></ion-icon> &nbsp; {{ class.prof }}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+
+    </ion-col>
+  </ion-row>
+</ion-content>

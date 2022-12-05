@@ -4,69 +4,106 @@
     <p class="text2">Grades</p>
   </div>
 
-  <ion-grid>
-    <div class="chart"><ion-img  [src]="imageSource" class="px-5"></ion-img></div>
-  </ion-grid>
-  
+  <ion-button *ngIf="viewOverview" fill="clear" expand="block" (click)="switchDisplay()">SHOW BY SEMESTER</ion-button>
+  <ion-button *ngIf="!viewOverview" fill="clear" expand="block" (click)="switchDisplay()">GO TO OVERVIEW</ion-button>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-card>
-          <ion-card-header>
-            <div class="gwatext">
-              <p class="text1">Past</p>
-              <p class="text2">GWA:</p>
-            </div>
-          </ion-card-header>
-          <ion-card-content class="large-text aileron">
-            {{ previous_sem }}
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card>
-          <ion-card-header>
-            <div class="gwatext">
-              <p class="text1">Current</p>
-              <p class="text2">GWA:</p>
-            </div>
-          </ion-card-header>
-          <ion-card-content class="large-text aileron">
-            {{ currentSem }}
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-card>
-          <ion-card-header>
-            <div class="gwatext">
-              <p class="text1">Overall</p>
-              <p class="text2">GWA:</p>
-            </div>
-          </ion-card-header>
-          <ion-card-content class="large-text aileron">
-            {{ overall }}
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card>
-          <ion-card-header>
-            <div class="gwatext">
-              <p class="text1">Expected</p>
-              <p class="text2">GWA:</p>
-            </div>
-          </ion-card-header>
-          <ion-card-content class="large-text aileron">
-            {{ currentSem }}
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+
+  <div *ngIf="!viewOverview" class="ion-text-center">
+    <div *ngFor="let sem of allGrades">
+      <h3>
+        <b>{{ sem.sem }}</b>
+      </h3>
+      <ion-card *ngFor="let grade of sem.grades" class="gradeCard">
+        <ion-card-header>
+          <ion-card-subtitle class="code">{{ grade.subject }} </ion-card-subtitle>
+            <ion-card-title>{{ grade.grade }} </ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <ion-label><ion-icon name="person-outline"></ion-icon> &nbsp; Sample Prof</ion-label>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+  <div>
+    <ion-grid *ngIf="false">
+      <div class="chart"><ion-img  [src]="imageSource" class="px-5"></ion-img></div>
+    </ion-grid>
+
+    <ion-card class="welcome-card" style="height: 250px !important; box-shadow: none; margin-bottom: 0px;">
+      <ion-card-header>
+        <ion-card-subtitle>GWA by semester</ion-card-subtitle>
+        <ion-card-title> {{ srcode }} </ion-card-title>
+      </ion-card-header>
+      <ion-card-content style="padding-bottom: 0px !important;">
+        <canvas #barChart></canvas>
+      </ion-card-content>
+    </ion-card>
+    
+  
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-card-header>
+              <div class="gwatext">
+                <p class="text1">Past</p>
+                <p class="text2">GWA:</p>
+              </div>
+            </ion-card-header>
+            <ion-card-content class="large-text aileron">
+              {{ previous_sem }}
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card>
+            <ion-card-header>
+              <div class="gwatext">
+                <p class="text1">Current</p>
+                <p class="text2">GWA:</p>
+              </div>
+            </ion-card-header>
+            <ion-card-content class="large-text aileron">
+              {{ currentSem }}
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-card-header>
+              <div class="gwatext">
+                <p class="text1">Overall</p>
+                <p class="text2">GWA:</p>
+              </div>
+            </ion-card-header>
+            <ion-card-content class="large-text aileron">
+              {{ overall }}
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card>
+            <ion-card-header>
+              <div class="gwatext">
+                <p class="text1">Expected</p>
+                <p class="text2">GWA:</p>
+              </div>
+            </ion-card-header>
+            <ion-card-content class="large-text aileron">
+              {{ expected }}
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+  
 
   <ion-fab vertical="top" horizontal="end" slot="fixed">
     <ion-fab-button (click)="openabout()">

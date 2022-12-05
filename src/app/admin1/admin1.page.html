@@ -1,5 +1,9 @@
 
 <ion-content style="height: 100%">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
   <div class="text">
     <p class="text1" *ngIf="create_mode">Create announcement for</p>
     <p class="text1" *ngIf="!create_mode">Announcements for</p>
@@ -28,6 +32,8 @@
           <p> {{ announcement.description }}</p>
           <ion-label><ion-icon name="person-outline"></ion-icon> &nbsp; {{ announcement.created_by }}</ion-label>
         </ion-card-content>
+        <ion-button color="warning" (click)="editMode(announcement)">EDIT</ion-button>
+        <ion-button color="danger" (click)="delete(announcement._id)">DELETE</ion-button>
       </ion-card>
     </ion-col>
 
@@ -36,7 +42,7 @@
 
 
 
-  <ion-card class="card" *ngIf="create_mode && announcements; else empty">
+  <ion-card class="card" *ngIf="create_mode || edit_mode && announcements; else empty">
     <ion-grid>
       <ion-row>
         <ion-col class="title">

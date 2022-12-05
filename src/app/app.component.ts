@@ -28,6 +28,7 @@ export class AppComponent {
       }
       console.log(time);
       const tasks = await this.getAllTasks();
+      console.log(tasks)
     for (const task of tasks) {
       console.log(task['value'].itemDueDate);
       const taskDeadline = task['value'].itemDueDate.split('T')
@@ -39,12 +40,22 @@ export class AppComponent {
       var datetime = currentdate.getFullYear() + "-" + (currentdate.getMonth()+1) + "-" + currentdate.getDate()
 
       const tomorrow = new Date(new Date().getTime() + (24 * 60 * 60 * 1000));
-      const tomorrowDate = tomorrow.getFullYear() + "-" + (tomorrow.getMonth()+1) + "-" + tomorrow.getDate()
-      console.log(`tomorrow ${tomorrowDate}`)
+      let tomorrowActualDate = tomorrow.getDate().toString();
+      if (parseInt(tomorrowActualDate) < 10) {
+        tomorrowActualDate = `0${tomorrowActualDate}`;
+      }
 
+      const tomorrowDate = tomorrow.getFullYear() + "-" + (tomorrow.getMonth()+1) + "-" + tomorrowActualDate
+      console.log(`tomorrow ${tomorrowDate}`)
+      console.log(taskDate)
+      console.log(taskTime.substring(0, 5))
+      console.log(time)
       if (taskDate == tomorrowDate && taskTime.substring(0, 5) === time) {
+        console.log('tomorrow!!!!')
         this.activityNotif(taskDetails.itemName, taskDetails.itemCategory, 'tomorrow')
       }
+
+      console.log(datetime)
 
       if (taskDate === datetime && taskTime.substring(0, 5) === time) {
         this.activityNotif(taskDetails.itemName, taskDetails.itemCategory, 'now')

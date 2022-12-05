@@ -106,4 +106,17 @@ export class Admin2Page implements OnInit {
     this.roleMessage = `Dismissed with role: ${role}`;
   }
 
+  handleRefresh(event) {
+    setTimeout(() => {
+
+      if (this.selectedClass) {
+        this.selectClass();
+      } else if (this.selectedSubject) {
+        this.selected();
+      }
+      
+      event.target.complete();
+    }, 2000);
+  };
+
 }

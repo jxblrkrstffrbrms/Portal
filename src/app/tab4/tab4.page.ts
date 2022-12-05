@@ -53,4 +53,8 @@ export class Tab4Page implements OnInit {
     this.router.navigate(['abtprofile'])
   }
 
+  openschedule() {
+    this.router.navigate(['schedule']);
+  }
+
 }

@@ -94,6 +94,7 @@ export class LoginPage implements OnInit {
         this.globalService.setIsAdmin(false);
         this.home();
       } else if (res.message === 'Found a match on an admin record.') {
+        this.globalService.setCode(this.ionicForm.value.sr_code)
         //this.globalService.is_admin = true;
         this.globalService.setIsAdmin(true);
         this.admin()

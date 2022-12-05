@@ -48,11 +48,15 @@
     </div>
     <div>
       <ion-card *ngFor="let announcement of announcements">
-        <ion-item>
-          <ion-icon name="alert-outline"></ion-icon>
-          <ion-label class="aileron">{{ announcement.title }}</ion-label>
-          <ion-button fill="outline" slot="end">View</ion-button>
-        </ion-item>
+          <ion-card-header>
+            <ion-card-subtitle class="text0">{{ announcement.created_at }} </ion-card-subtitle>
+              <ion-card-title class="text1">{{ announcement.title}}</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <p> {{ announcement.description }}</p>
+            <ion-label><ion-icon name="person-outline"></ion-icon> &nbsp; {{ announcement.created_by }}</ion-label>
+          </ion-card-content>
       </ion-card>
     </div>
 

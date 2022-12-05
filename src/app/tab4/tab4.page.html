@@ -69,6 +69,14 @@
   </ion-card>
 
   <ion-card class="button">
+    <ion-item>
+      <ion-icon name="calendar-outline" slot="start"></ion-icon>
+      <ion-label class="label">Class Schedule</ion-label>
+      <ion-button fill="outline" slot="end" (click)="openschedule()">View</ion-button>
+    </ion-item>
+  </ion-card>
+
+  <ion-card class="button">
     <ion-item (click)="logout()">
       <ion-icon name="log-out-outline" slot="start"></ion-icon>
       <ion-label class="label">Log Out</ion-label>

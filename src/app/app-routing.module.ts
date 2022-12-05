@@ -113,6 +113,10 @@ const routes: Routes = [
   {
     path: 'admin2',
     loadChildren: () => import('./admin2/admin2.module').then( m => m.Admin2PageModule)
+  },
+  {
+    path: 'schedule',
+    loadChildren: () => import('./profile/schedule/schedule.module').then( m => m.SchedulePageModule)
   }
 
 ];

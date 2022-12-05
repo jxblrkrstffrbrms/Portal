@@ -16,6 +16,7 @@ export class Admin1Page implements OnInit {
   department = "CICS";
   announcements = []
   loading = false;
+  update_id = null;
   constructor(private http: HttpClient, private toastController: ToastController, private globalService: GlobalService) { }
 
   async ngOnInit() {
@@ -27,11 +28,15 @@ export class Admin1Page implements OnInit {
       await this.presentToast('Please complete all required fields', 'danger')
     }
     else {
-      console.log(this.globalService.getCode())
       this.loading = true;
       const add_body = {"title": this.title, "description": this.description, "department": "CICS", "sr_code": this.globalService.getCode()}
-      const res = await this.http.post<any>('http://18.141.228.159:8080/bsu-api/announcements', add_body).toPromise();
-      if (res.message === 'Successfully created announcement') {
+      let res;
+      if (this.update_id){
+        res = await this.http.patch<any>(`http://18.141.228.159:8080/bsu-api/announcements/${this.update_id}`, add_body).toPromise();
+      } else {
+        res = await this.http.post<any>('http://18.141.228.159:8080/bsu-api/announcements', add_body).toPromise();
+      }
+      if (res.message === 'Successfully created announcement' || res.message === 'Successfully updated announcement') {
         this.getAnnouncements();
         this.create_mode = false
         await this.presentToast(res.message, 'success')
@@ -39,6 +44,7 @@ export class Admin1Page implements OnInit {
         this.create_mode = false
         await this.presentToast(res.message, 'danger')
       }
+      this.update_id = null;
       this.loading = false;
     }
   }
@@ -76,4 +82,25 @@ export class Admin1Page implements OnInit {
     this.title = "";
     this.description = "";
   }
+
+  editMode(anc) {
+    this.create_mode = true;
+    this.title = anc.title;
+    this.description = anc.description;
+    this.update_id = anc._id;
+  }
+
+  async delete(anc_id) {
+    const res = await this.http.delete<any>(`http://18.141.228.159:8080/bsu-api/announcements/${anc_id}/${this.globalService.getCode()}`).toPromise();
+    this.getAnnouncements();
+    await this.presentToast(res.message, 'success')
+  }
+
+
+  handleRefresh(event) {
+    setTimeout(() => {
+      this.getAnnouncements();
+      event.target.complete();
+    }, 2000);
+  };
 }

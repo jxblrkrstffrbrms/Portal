@@ -1,6 +1,9 @@
 
 
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <div class="text">
     <p class="text1">View class</p>
     <p class="text2">Attendance</p>
@@ -20,7 +23,7 @@
         <ion-list *ngIf="selectedSubject" class="pr-2">
           <ion-item>
             <ion-select [(ngModel)]="selectedClass" (ngModelChange)="selectClass()" interface="action-sheet" placeholder="Select class">
-              <ion-select-option [value]="class.code" *ngFor="let class of classes">{{class.date}}</ion-select-option>
+              <ion-select-option [value]="class.code" *ngFor="let class of classes">{{class.date}} ({{class.attendees}})</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-list>
