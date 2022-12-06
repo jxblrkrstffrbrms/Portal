@@ -9,7 +9,6 @@ import { GlobalService } from '../global/global.service';
 export class TabsPage {
   public is_admin = false;
   constructor(private router:Router, private globalService: GlobalService) {
-    console.log('sheesh tabs');
 
     if (this.globalService.is_admin) {
       this.is_admin = true;
@@ -17,6 +16,7 @@ export class TabsPage {
   }
 
   logout() {
+    this.globalService.logout();
     this.router.navigate(['login']);
   }
 }

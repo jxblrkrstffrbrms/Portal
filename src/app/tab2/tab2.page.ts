@@ -44,9 +44,7 @@ export class Tab2Page {
   }
 
   getAllTask(){
-    console.log('TO DO LIST')
     this.todoList = this.todoService.getAllTasks()
-    console.log(this.todoList)
   }
 
   async update(selectedTask){

@@ -8,11 +8,13 @@ export class GlobalService {
   isStudent = null;
   name = null;
   section = null;
+  isLoggedIn = false;
   tasks = [];
   public is_admin = false;
   constructor() { }
 
   setCode(code) {
+    this.isLoggedIn = true;
     this.srcode = code;
   }
 
@@ -56,6 +58,13 @@ export class GlobalService {
     return this.tasks
   }
 
+  loggedIn() {
+    return this.isLoggedIn;
+  }
+
+  logout() {
+    this.isLoggedIn = false;
+  }
 
 
 

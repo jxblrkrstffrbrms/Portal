@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { GlobalService } from '../global/global.service';
 @Component({
   selector: 'app-tab4',
   templateUrl: './tab4.page.html',
@@ -8,7 +8,22 @@ import { Router } from '@angular/router';
 })
 export class Tab4Page implements OnInit {
 
-  constructor(private router:Router) { }
+  srcode = null;
+  name = null;
+  image_url = null;
+  constructor(private router:Router, private gb: GlobalService) { 
+    this.srcode = this.gb.getCode();
+    if (this.srcode == '19-03745') {
+      this.name = 'Mary Joyce Llabres'
+      this.image_url = './assets/pics/idpic.png'
+    } else if (this.srcode == '19-00578') {
+      this.name = 'Jax Blaire Kristoffer Ramos'
+      this.image_url = './assets/pics/idpic2.png'
+    } else if (this.srcode == '19-03406') {
+      this.name = 'Jeanela Myca Molino'
+      this.image_url = './assets/pics/idpic3.png'
+    }
+  }
 
   ngOnInit() {
   }
@@ -46,6 +61,7 @@ export class Tab4Page implements OnInit {
   }
 
   logout(){
+    this.gb.logout();
     this.router.navigate(['login'])
   }
 

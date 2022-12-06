@@ -4,9 +4,9 @@
       <p class="text2">Profile</p>
 
       <ion-grid>
-      <ion-img src="./assets/pics/idpic.png" class="idpic"></ion-img>
-      <p class="text3">Mary Joyce Llabres</p>
-      <p class="text4">19-03745</p>
+      <ion-img [src]="image_url" class="idpic"></ion-img>
+      <p class="text3">{{ name }}</p>
+      <p class="text4">{{ srcode }}</p>
       </ion-grid>
       
     </div>
@@ -83,11 +83,5 @@
     </ion-item>
   </ion-card>
 </div>
-
-<ion-fab vertical="top" horizontal="end" slot="fixed">
-  <ion-fab-button (click)="openabout()">
-    <ion-icon name="help-circle-outline"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
   
 </ion-content>

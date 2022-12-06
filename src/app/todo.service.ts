@@ -14,6 +14,10 @@ export class TodoService {
     this.storage.set(key,value)
   }
 
+  async getStorage(key) {
+    return  this.storage.get(key)
+  }
+
   deleteTask(key) {
     this.storage.remove(key)
   }
@@ -26,10 +30,13 @@ export class TodoService {
   getAllTasks() {
     taskCount = 0
     let task: Array<object> = []
-    this.storage.forEach((key, value, index) => {
+    this.storage.forEach((value, key, index) => {
 
-      task.push({'key':value, 'value':key})
-      taskCount += 1;
+      if ('itemName' in value) { 
+        task.push({'key':key, 'value':value})
+        taskCount += 1;
+      }
+
     });
     return task
   }
