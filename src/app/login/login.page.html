@@ -1,20 +1,20 @@
 <ion-content>
-  <ion-img src="./assets/pics/background.jpg" class="bg"></ion-img>
-  <ion-img src="./assets/pics/logo.png" class="logo"></ion-img>
+  <ion-img src="./assets/forapp/bg.jpg" class="bg"></ion-img>
+  <ion-img src="./assets/forapp/logo.png" class="logo"></ion-img>
 
   <div class="content">
-    <ion-img src="./assets/pics/line.jpg" class="line"></ion-img>
+    <ion-img src="./assets/forapp/line.png" class="line"></ion-img>
     <p class="text">sign in</p>
   </div>
 
   <div class="form">
     <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
       <ion-item lines="full">
-        <ion-label position="floating" class="textform">SR-Code</ion-label>
+        <ion-label position="floating" class="textform">Username</ion-label>
         <ion-input label="SR-Code" formControlName="sr_code" [(ngModel)]="sr_code"></ion-input>
       </ion-item>
       <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
-        SR-Code is required.
+        Username is required.
       </span>
       <ion-item lines="full">
         <ion-label position="floating" class="textform">Password</ion-label>
@@ -36,7 +36,7 @@
         </form>
       </div>
 
-    <ion-button type="submit" color="danger" expand="block">Submit</ion-button>
+    <ion-button type="submit" color="dark" expand="block">Submit</ion-button>
 
     <a routerLink="#" class="contact-us" (click)="opencontacts()">Contact Us</a>
   </form>
