@@ -113,13 +113,6 @@ export class Tab3Page {
           borderWidth: 1
         }]
       },
-      options: {
-        scales: {
-          y: {
-            reverse: true,
-          }
-        }
-      }
     });
   }
 

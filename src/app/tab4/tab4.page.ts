@@ -13,7 +13,7 @@ export class Tab4Page implements OnInit {
   image_url = null;
   constructor(private router:Router, private gb: GlobalService) { 
     this.srcode = this.gb.getCode();
-    if (this.srcode == '19-03745') {
+    if (this.srcode == '198765150721') {
       this.name = 'Mary Joyce Llabres'
       this.image_url = './assets/pics/idpic.png'
     } else if (this.srcode == '19-00578') {
