@@ -2,9 +2,33 @@
   <div class="text">
     <p class="text1">My</p>
     <p class="text2">Classes</p>
-      <ion-card *ngIf="!showScan" class="pic">
-      <ion-img src="./assets/pics/scan.png" class="picture"></ion-img>
-    </ion-card>
+    <div class="news">
+      <ion-slides [options] ="options" class="ion-margin-top">
+        <ion-slide>
+          <ion-card class="newscard">
+            <ion-card-header>
+              <ion-img src="./assets/forapp/1.jpg" class="newspic"></ion-img>
+            </ion-card-header>
+          </ion-card>
+      </ion-slide>
+      
+      <ion-slide>
+          <ion-card class="newscard">
+            <ion-card-header>
+              <ion-img src="./assets/forapp/2.jpg" class="newspic"></ion-img>
+            </ion-card-header>
+          </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card class="newscard">
+        <ion-card-header>
+          <ion-img src="./assets/forapp/3.jpg" class="newspic"></ion-img>
+        </ion-card-header>
+      </ion-card>
+</ion-slide>
+    </ion-slides>
+    </div>
   </div>
   <ion-grid>
     <ion-row>

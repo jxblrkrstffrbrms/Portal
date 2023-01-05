@@ -21,17 +21,40 @@
     }
     .text2{
       font-family: Aileron-Heavy;
-      color: darkred;
+      color: #2d3250;
     }
 }
 
-.pic{
-    position: relative;
-    width: 85%;
-    padding-left: 5%;
+.news{
+  position: relative;
+  width:90%;
+}
+
+.newscard{
+  width: 100%;
+  position: relative;
+    width:85%;
     padding-right: 5%;
     box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.20),
     0px 1px 3px 0px rgba(0,0,0,0.02);
     --border: none;
     border-radius: 20px;
+  
+.newspic{
+  width: 100%;
+}
+}
+
+.swiper-slide-active{
+transform: scale(1.05, 1.05);
+
+ion-card{
+    img{
+        transform: scale(1, 1);
+    }
+}
+}
+
+.swiper-slide{
+transition: 700ms all ease-in-out;
 }
