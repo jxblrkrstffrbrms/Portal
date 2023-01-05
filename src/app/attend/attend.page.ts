@@ -150,4 +150,13 @@ export class AttendPage implements OnInit {
   openabout(){
     this._router.navigate(['abtattendance'])
   }
+
+  options = {
+    slidesPerView:  1,
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 10,
+    autoplay: true,
+
+  }
 }
