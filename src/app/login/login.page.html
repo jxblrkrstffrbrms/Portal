@@ -10,11 +10,11 @@
   <div class="form">
     <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
       <ion-item lines="full">
-        <ion-label position="floating" class="textform">LRN</ion-label>
+        <ion-label position="floating" class="textform">Username</ion-label>
         <ion-input label="SR-Code" formControlName="sr_code" [(ngModel)]="sr_code"></ion-input>
       </ion-item>
       <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
-        LRN is required.
+        Username is required.
       </span>
       <ion-item lines="full">
         <ion-label position="floating" class="textform">Password</ion-label>
